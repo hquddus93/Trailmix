@@ -17,4 +17,5 @@ before_action :ensure_logged_in, only: [:destroy]
   def destroy
       logout
       redirect_to 'api/session'
+  end
 end
