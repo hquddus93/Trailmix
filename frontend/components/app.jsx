@@ -1,11 +1,11 @@
 
 import React from "react";
-import GreetingContainer from "./greeting/greeting_container";
+import LoginContainer from './splash/login_container'
 
 const App = () => (
     <div>
         <h1>TrailMix</h1>
-        <GreetingContainer />
+        <LoginContainer />
     </div>
 );
 

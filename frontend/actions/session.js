@@ -23,9 +23,11 @@ const receiveErrors = (errors) => ({
 
 
 
-export const login = (user) => dispatch => (Login(user))
-    .then((user) => (dispatch(receiveCurrentUser(user))))
-    .fail(err => dispatch(receiveErrors(err.responseJSON)));
+export const login = (user) => dispatch => {
+   return Login(user)
+   .then((user) => dispatch(receiveCurrentUser(user)))
+}
+    // .fail(err => dispatch(receiveErrors(err.responseJSON)));
 
 export const logout = () => dispatch => (Logout())
     .then(() => dispatch(logoutCurrentUser()));
