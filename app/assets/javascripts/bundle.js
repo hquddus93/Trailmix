@@ -6317,11 +6317,10 @@ var login = function login(user) {
   return function (dispatch) {
     return Object(_util_session__WEBPACK_IMPORTED_MODULE_0__["Login"])(user).then(function (user) {
       return dispatch(receiveCurrentUser(user));
-    }).fail(function (err) {
-      return dispatch(receiveErrors(err.responseJSON));
     });
   };
-};
+}; // .fail(err => dispatch(receiveErrors(err.responseJSON)));
+
 var logout = function logout() {
   return function (dispatch) {
     return Object(_util_session__WEBPACK_IMPORTED_MODULE_0__["Logout"])().then(function () {
@@ -6346,19 +6345,9 @@ var signup = function signup(user) {
   !*** ./frontend/components/app.jsx ***!
   \*************************************/
 /*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports) {
 
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
- // import GreetingContainer from "./greeting/greeting_container";
-
-var App = function App() {
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "TrailMix"));
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (App);
+throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nSyntaxError: /Users/hiraquddus/Desktop/Trailmix/frontend/components/app.jsx: Unexpected token (3:1)\n\n\u001b[0m \u001b[90m 1 | \u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 2 | \u001b[39m\u001b[36mimport\u001b[39m \u001b[33mReact\u001b[39m from \u001b[32m\"react\"\u001b[39m\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 3 | \u001b[39m\u001b[33m<<\u001b[39m\u001b[33m<<\u001b[39m\u001b[33m<<\u001b[39m\u001b[33m<\u001b[39m \u001b[33mHEAD\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m   | \u001b[39m \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 4 | \u001b[39m\u001b[90m// import GreetingContainer from \"./greeting/greeting_container\";\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 5 | \u001b[39m\u001b[33m===\u001b[39m\u001b[33m===\u001b[39m\u001b[33m=\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 6 | \u001b[39m\u001b[36mimport\u001b[39m \u001b[33mLoginContainer\u001b[39m from \u001b[32m'./splash/login_container'\u001b[39m\u001b[0m\n    at Object._raise (/Users/hiraquddus/Desktop/Trailmix/node_modules/@babel/parser/lib/index.js:746:17)\n    at Object.raiseWithData (/Users/hiraquddus/Desktop/Trailmix/node_modules/@babel/parser/lib/index.js:739:17)\n    at Object.raise (/Users/hiraquddus/Desktop/Trailmix/node_modules/@babel/parser/lib/index.js:733:17)\n    at Object.unexpected (/Users/hiraquddus/Desktop/Trailmix/node_modules/@babel/parser/lib/index.js:8807:16)\n    at Object.jsxParseIdentifier (/Users/hiraquddus/Desktop/Trailmix/node_modules/@babel/parser/lib/index.js:4412:12)\n    at Object.jsxParseNamespacedName (/Users/hiraquddus/Desktop/Trailmix/node_modules/@babel/parser/lib/index.js:4422:23)\n    at Object.jsxParseElementName (/Users/hiraquddus/Desktop/Trailmix/node_modules/@babel/parser/lib/index.js:4433:21)\n    at Object.jsxParseOpeningElementAt (/Users/hiraquddus/Desktop/Trailmix/node_modules/@babel/parser/lib/index.js:4519:22)\n    at Object.jsxParseElementAt (/Users/hiraquddus/Desktop/Trailmix/node_modules/@babel/parser/lib/index.js:4552:33)\n    at Object.jsxParseElement (/Users/hiraquddus/Desktop/Trailmix/node_modules/@babel/parser/lib/index.js:4626:17)\n    at Object.parseExprAtom (/Users/hiraquddus/Desktop/Trailmix/node_modules/@babel/parser/lib/index.js:4633:19)\n    at Object.parseExprSubscripts (/Users/hiraquddus/Desktop/Trailmix/node_modules/@babel/parser/lib/index.js:9656:23)\n    at Object.parseMaybeUnary (/Users/hiraquddus/Desktop/Trailmix/node_modules/@babel/parser/lib/index.js:9636:21)\n    at Object.parseExprOps (/Users/hiraquddus/Desktop/Trailmix/node_modules/@babel/parser/lib/index.js:9506:23)\n    at Object.parseMaybeConditional (/Users/hiraquddus/Desktop/Trailmix/node_modules/@babel/parser/lib/index.js:9479:23)\n    at Object.parseMaybeAssign (/Users/hiraquddus/Desktop/Trailmix/node_modules/@babel/parser/lib/index.js:9434:21)\n    at Object.parseExpression (/Users/hiraquddus/Desktop/Trailmix/node_modules/@babel/parser/lib/index.js:9386:23)\n    at Object.parseStatementContent (/Users/hiraquddus/Desktop/Trailmix/node_modules/@babel/parser/lib/index.js:11285:23)\n    at Object.parseStatement (/Users/hiraquddus/Desktop/Trailmix/node_modules/@babel/parser/lib/index.js:11156:17)\n    at Object.parseBlockOrModuleBlockBody (/Users/hiraquddus/Desktop/Trailmix/node_modules/@babel/parser/lib/index.js:11731:25)\n    at Object.parseBlockBody (/Users/hiraquddus/Desktop/Trailmix/node_modules/@babel/parser/lib/index.js:11717:10)\n    at Object.parseTopLevel (/Users/hiraquddus/Desktop/Trailmix/node_modules/@babel/parser/lib/index.js:11087:10)\n    at Object.parse (/Users/hiraquddus/Desktop/Trailmix/node_modules/@babel/parser/lib/index.js:12768:10)\n    at parse (/Users/hiraquddus/Desktop/Trailmix/node_modules/@babel/parser/lib/index.js:12821:38)\n    at parser (/Users/hiraquddus/Desktop/Trailmix/node_modules/@babel/core/lib/parser/index.js:54:34)\n    at parser.next (<anonymous>)\n    at normalizeFile (/Users/hiraquddus/Desktop/Trailmix/node_modules/@babel/core/lib/transformation/normalize-file.js:93:38)\n    at normalizeFile.next (<anonymous>)\n    at run (/Users/hiraquddus/Desktop/Trailmix/node_modules/@babel/core/lib/transformation/index.js:31:50)\n    at run.next (<anonymous>)");
 
 /***/ }),
 
@@ -6457,7 +6446,7 @@ var sessionErrorsReducer = function sessionErrorsReducer() {
 
   switch (action.type) {
     case _actions_session__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_ERRORS"]:
-      return action.err;
+      return action.errors;
 
     case _actions_session__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_CURRENT_USER"]:
       return [];
@@ -6490,7 +6479,7 @@ var _nullUser = Object.freeze({
 var sessionReducer = function sessionReducer() {
   var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : _nullUser;
   var action = arguments.length > 1 ? arguments[1] : undefined;
-  Object.freeze(state);
+  Object.freeze(state); // debugger
 
   switch (action.type) {
     case _actions_session__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_CURRENT_USER"]:
@@ -6531,7 +6520,7 @@ var usersReducer = function usersReducer() {
 
   switch (action.type) {
     case _actions_session__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_CURRENT_USER"]:
-      return Object.assign({}, state, _defineProperty({}, action.user.id, action.user));
+      return Object.assign({}, state, _defineProperty({}, action.currentUser.id, action.currentUser));
 
     default:
       return state;
@@ -6590,9 +6579,9 @@ __webpack_require__.r(__webpack_exports__);
 
 document.addEventListener("DOMContentLoaded", function () {
   var root = document.getElementById("root");
-  var store = Object(_store_store__WEBPACK_IMPORTED_MODULE_2__["default"])(); // window.getState = store.getState;
-  // window.dispatch = store.dispatch;
-
+  var store = Object(_store_store__WEBPACK_IMPORTED_MODULE_2__["default"])();
+  window.getState = store.getState;
+  window.dispatch = store.dispatch;
   react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_root__WEBPACK_IMPORTED_MODULE_3__["default"], {
     store: store
   }), root);
@@ -6615,7 +6604,7 @@ __webpack_require__.r(__webpack_exports__);
 var SignUp = function SignUp(user) {
   return $.ajax({
     method: 'POST',
-    url: 'api/users',
+    url: '/api/users',
     data: {
       user: user
     }
@@ -6624,7 +6613,7 @@ var SignUp = function SignUp(user) {
 var Login = function Login(user) {
   return $.ajax({
     method: 'POST',
-    url: 'api/session',
+    url: '/api/session',
     data: {
       user: user
     }
@@ -6633,7 +6622,7 @@ var Login = function Login(user) {
 var Logout = function Logout() {
   return $.ajax({
     method: 'DELETE',
-    url: 'api/session'
+    url: '/api/session'
   });
 };
 
