@@ -6,14 +6,14 @@ before_action :ensure_logged_in, only: [:destroy]
     @user = User.find_by_credentials(params[:user][:email], params[:user][:password])
     if @user
       login(@user)
-      render '/api/users/show'
+      render 'api/users/show'
+      # redirect_to videos_url
     else
       render json: ["Invalid username/password combination"], status: 401
     end
   end
 
   def destroy
-      logout
-      redirect_to 'api/session'
+      logout 
   end
 end

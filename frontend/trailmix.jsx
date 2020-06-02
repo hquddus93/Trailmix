@@ -7,8 +7,22 @@ import Root from './components/root';
 
 document.addEventListener("DOMContentLoaded", () => {
     const root = document.getElementById("root");
-    const store = configureStore();
-    window.getState = store.getState;
-    window.dispatch = store.dispatch;
+    let store;
+    if (window.currentUser) {
+        const preloadedState = {
+            session: { id: window.currentUser.id },
+            entities: {
+                users: { [window.currentUser.id]: window.currentUser }
+            }
+        }
+        store = configureStore(preloadedState);
+        window.getState = store.getState;
+        window.dispatch = store.dispatch;
+    } else {
+        store = configureStore();
+        window.getState = store.getState;
+        window.dispatch = store.dispatch;
+    }
+      
     ReactDOM.render(<Root store={store} />, root);
 });
