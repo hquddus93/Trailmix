@@ -11,65 +11,63 @@ class SignupForm extends React.Component {
     }
 
     update(field) {
-        return e => (
+        return e => {
+            this.props.clearErrors()
             this.setState({ [field]: e.target.value })
-        )
+            
+        }
     }
 
     handleSubmit(e) {
-        this.path = null
+        
         e.preventDefault();
+        this.props.clearErrors()
         let user = this.state;
-        this.props.signup(user)
-        // .then(user => this.props.login(user))
-        .then(this.path = true)
-        // this.setState({ email: '', password: '', username: '' })
+        this.props.signup(user);
+        this.setState({ email: "", password: "", username: "" })
+       
     }
-    // renderErrors() {
-    //     return (
-    //         <ul>
-    //             {this.props.errors.map((error, i) => (
-    //                 <li key={`error-${i}`}>
-    //                     {error}
-    //                 </li>
-    //             ))}
-    //         </ul>
-    //     );
-    // }
+    renderErrors() {
+    
+        return (
+            this.props.errors.map((error, i) => (
+                <p id='errors'
+                    key={`error-${i}`}>
+                        {error}
+                </p>
+                )
+            )
+        );
+    }
     render() {
 
-
-        if (this.path) {
-            return (
-                < Route path="/signup" >
-                    <Redirect to="/videos" />
-                </Route >
-            )
-        } else {
-            return (
-                <div>
-                    <a href="/#/">
-                        <img src="https://fontmeme.com/permalink/200602/b89239ba0483c23a0be252ebcabbe556.png"
-                            alt="netflix-font"
-                            border="0"
-                            id='logo' /></a>
-                    <form onSubmit={this.handleSubmit} className='signup-form'>
-                        <h1>Sign Up</h1>
-                    {/* {this.renderErrors()} */}
-                        <input type="text"
-                            placeholder='Email'
-                            onChange={this.update('email')} />
-                        <input type="text"
-                            placeholder='Username'
-                            onChange={this.update('username')} />
-                        <input type="password"
-                            placeholder='Password'
-                            onChange={this.update('password')} />
-                        <button>Sign Up</button>
-                    </form>
-                </div>
-            )
-        }
+        return (
+            <div>
+                <a href="/#/">
+                    <img src="https://fontmeme.com/permalink/200602/b89239ba0483c23a0be252ebcabbe556.png"
+                        alt="netflix-font"
+                        border="0"
+                        id='logo' /></a>
+                <form onSubmit={this.handleSubmit} className='signup-form'>
+                    <h1>Sign Up</h1>
+                {this.renderErrors()}
+                    <input type="text"
+                        placeholder='Email'
+                        value={this.state.email}
+                        onChange={this.update('email')} />
+                    <input type="text"
+                        placeholder='Username'
+                        value={this.state.username}
+                        onChange={this.update('username')} />
+                    <input type="password"
+                        placeholder='Password'
+                        value={this.state.password}
+                        onChange={this.update('password')} />
+                    <button>Sign Up</button>
+                </form>
+            </div>
+        )
+       
     }
 };
 

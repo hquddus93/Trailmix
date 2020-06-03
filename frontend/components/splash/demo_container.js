@@ -6,17 +6,6 @@ import Demo from './demo';
 
 
 
-// const mSTP = (state) => ({
-//     errors: state.errors,
-//     formType: 'login',
-//     form: {
-//         email: "",
-//         password: '',
-//         username: ''
-//     }
-
-// });
-
 
 const mDTP = dispatch => ({
     login: (user) => dispatch(login(user)),

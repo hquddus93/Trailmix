@@ -70,6 +70,7 @@
    width: 500px;
    margin: auto;
    margin-top: 200px;
+   margin-bottom: 300px;
 
 
  }
@@ -82,22 +83,29 @@
     font-weight: bold;
     border-radius: 10%;
     font-size: 30px;
-      font-family: Arial, Helvetica, sans-serif;
+   font-family: Arial, Helvetica, sans-serif;
  }
 
-  main {
-    background-image: url(Netflix-Background.jpg);
+ 
+ main {
+   background-image: url(Netflix-Background.jpg);
+   position: absolute;
+   top: 0; 
+   left: 0; 
+   right: 0;
+   bottom: 0;
 
-      position: fixed; 
-      top: 0; 
-      left: 0; 
-      opacity : 10;
-         
-
-      min-width: 100%;
-      min-height: 100%; 
-
+   min-width: 100%;
+   height: 1000px;
  }
+   
+
+/* 
+.splash {
+    height: 2000px;
+    width: 100%;
+  
+ } */
 
  .span {
     display: flex;
@@ -140,18 +148,18 @@
     /* justify-content: space-around; */
     flex-direction: column;
     height: 500px;
-    width: 450px;
+    width: 365px;
     background-color: black;
     opacity: .8;
     margin: auto;
     margin-top: 10px;
     color: white;
-    padding: 20px;
     border-radius: 2%;
     font-size: 24px;
-    box-sizing: border-box;
+    box-sizing: content-box;
     padding-left: 70px;
     padding-right: 15px;
+    padding-bottom: 30px;
    align-items: left;
    font-family: Arial, Helvetica, sans-serif;
  }
@@ -188,29 +196,31 @@
     margin-top: 20px;
     
    }
-       .login-span p {
-          color: gray;
-          font-size: 16px;
-          font-family: Arial, Helvetica, sans-serif;
-      
-      
-       }
-      
-       #span-link {
-          color:white;
-          font-size: 16px;
-          font-family: Arial, Helvetica, sans-serif;
-          text-decoration: none;
-          margin-left: 5px;
-      
-       }
+
+   .login-span p {
+      color: gray;
+      font-size: 16px;
+      font-family: Arial, Helvetica, sans-serif;
+
+
+   }
+
+   #span-link {
+      color:white;
+      font-size: 16px;
+      font-family: Arial, Helvetica, sans-serif;
+      text-decoration: none;
+      margin-left: 5px;
+
+   }
 
    .signup-form {
       display: flex;
       /* justify-content: space-around; */
       flex-direction: column;
-      height: 500px;
+     /* height: 500px; */
       width: 450px;
+      height: fit-content;
       background-color: black;
       opacity: .8;
       margin: auto;
@@ -222,6 +232,7 @@
       box-sizing: border-box;
       padding-left: 70px;
       padding-right: 15px;
+      padding-bottom: 100px;
       align-items: left;
       font-family: Arial, Helvetica, sans-serif;
    }
@@ -278,7 +289,140 @@
     font-size: 72px;
  }
 
- ul li {
-    font-size: 40px;
-    color: red;
+ #errors {
+   font-size: 14px;
+   color: red;
+   list-style: none;
+   text-align: left;
+   font-family: Arial, Helvetica, sans-serif;
+
+
  }
+
+ /* #errors li {
+    margin-left: 0;
+    text-align: left;
+ } */
+
+ 
+
+.tv {
+   font-family: Arial, Helvetica, sans-serif;
+
+   border-top: 4px solid gray;
+   border-bottom: 4px solid gray;
+   background-color: black;
+   width: 100%;
+   height: 250px;
+   position: relative;
+   display: flex;
+   flex-direction: row;
+   justify-content: space-around;
+   padding-top: 50px;
+   margin-top: 0;
+
+    
+} 
+
+
+.tv-text {
+   display: flex;
+   flex-direction: column;
+   justify-content: left;
+   /* width: 300px; */
+}
+.tv h2 {
+   color: white;
+   text-align: left;
+   width: 400;
+   font-size: 34px;
+   margin-bottom: 0;
+}
+
+.tv p {
+   color: white;
+   text-align: left;
+   width: 400px;
+   font-size: 24px;
+   margin-bottom: 30px;
+
+}
+
+
+.phone {
+   font-family: Arial, Helvetica, sans-serif;
+
+   border-bottom: 4px solid gray;
+   background-color: black;
+   width: 100%;
+   height: 250px;
+   position: relative;
+   display: flex;
+   flex-direction: row-reverse;
+   justify-content: space-around;
+   padding-top: 50px;
+
+} 
+
+
+
+
+.phone-text {
+   display: flex;
+   flex-direction: column;
+ 
+ 
+}
+.phone h2 {
+   color: white;
+   text-align: left;
+   width: 400;
+   font-size: 34px;
+   margin-bottom: 0;
+   
+}
+
+.phone p {
+   color: white;
+   text-align: left;
+   width: 400px;
+   font-size: 24px;
+  
+}
+
+.watch {
+   font-family: Arial, Helvetica, sans-serif;
+
+   border-bottom: 4px solid gray;
+   background-color: black;
+   width: 100%;
+   height: 250px;
+   position: relative;
+   display: flex;
+   flex-direction: row;
+   justify-content: space-around;
+   padding-top: 50px;
+
+} 
+
+
+.watch-text {
+   display: flex;
+   flex-direction: column;
+   justify-content: left;
+
+}
+.watch h2 {
+   color: white;
+   text-align: left;
+   width: 400;
+   font-size: 34px;
+   margin-bottom: 0;
+}
+
+.watch p {
+   color: white;
+   text-align: left;
+   width: 400px;
+   font-size: 24px;
+}
