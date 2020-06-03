@@ -1,11 +1,11 @@
 import { connect } from 'react-redux';
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { signup, login } from '../../actions/session';
+import { signup, clearErrors } from '../../actions/session';
 import SignupForm from './signup';
 
 const mapStateToProps = state => ({
-    errors: state.errors,
+    errors: Object.values(state.errors.session),
     navLink: <Link to="/login">log in instead</Link>,
     form: {
         email: "",
@@ -17,7 +17,7 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => {
     return {
         signup: (user) => dispatch(signup(user)),
-        // login: (user) => dispatch(login(user)),
+        clearErrors: () => dispatch(clearErrors())
     };
 };
 

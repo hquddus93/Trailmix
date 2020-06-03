@@ -11,24 +11,22 @@ class LoginForm extends React.Component {
     };
 
     update(field) {
-        return e => (
+        return e => {
+            this.props.clearErrors()
             this.setState({[field]: e.target.value})
-        )
-    };
-
-    handleSubmit(e) {
-
-        e.preventDefault();
-        let user = this.state;
-        if (this.props.login(user)) {
-            this.setState({email: "", password: ""})
-        } else {
-            return this.renderErrors();
-        }
         
-      
-       
+        }
     };
+
+handleSubmit(e) {
+
+    e.preventDefault();
+    this.props.clearErrors();
+    let user = this.state;
+    this.props.login(user);
+    this.setState({email: "", password: ""})
+
+};
 
 
     // handleDemo() {
@@ -37,17 +35,13 @@ class LoginForm extends React.Component {
     renderErrors() {
 
         if (this.props.errors.length > 0) {
-
             return (
-                <ul>
-                    {this.props.errors.map((error, i) => (
-                        <li 
-                        id='errors'
+                this.props.errors.map((error, i) => (   
+                    <p id='errors'
                         key={`error-${i}`}>
-                            {error}
-                        </li>
-                    ))}
-                </ul>
+                            {error}      
+                    </p>
+                ))
             )
         }
 
@@ -67,12 +61,15 @@ class LoginForm extends React.Component {
             
             <form onSubmit={this.handleSubmit} className='login-form'>
                 <h2>Sign In</h2>
-                {this.renderErrors()}
+                <p className='errors'>{this.renderErrors()}</p>
+                
                 <input type="text" 
                     placeholder='Email'
+                    value={this.state.email}
                     onChange={this.update('email')}/>
                 <input type="password" 
                     placeholder='Password'
+                    value={this.state.password}
                     onChange={this.update('password')}/>
                 <button>Sign In</button>
                 <span className='login-span'>
