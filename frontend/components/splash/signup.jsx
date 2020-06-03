@@ -5,10 +5,14 @@ class SignupForm extends React.Component {
     constructor(props) {
         super(props);
 
-        this.props.clearErrors()
+        
         this.state = this.props.form;
         this.handleSubmit = this.handleSubmit.bind(this);
-        // this.renderErrors = this.renderErrors.bind(this);
+     
+    }
+
+    componentDidMount() {
+        this.props.clearErrors()
     }
 
     update(field) {

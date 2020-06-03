@@ -42,7 +42,7 @@ const Splash = (props) => {
             <p>Watch on Smart TVs, Playstation, Xbox, Chromecast, Apple TV, Blu-ray players, and more.</p>
           </div>
 
-            <img src={window.tvURL} width="150" height="150"/>
+            <img src={window.tvURL} width="500" height="500"/>
 
           </div>
 
@@ -53,7 +53,7 @@ const Splash = (props) => {
             <p> Save your favorites easily and always have something to watch.</p>
             </div>
 
-          <img src={window.mobileURL} width="150" height="150" />
+          <img src={window.mobileURL} width="500" height="500" />
 
           </div>
 
@@ -63,7 +63,7 @@ const Splash = (props) => {
             <p>Stream unlimited movies and TV shows on your phone, tablet, laptop, and TV without paying more.</p>
           </div>
 
-          <img src={window.deviceURL} width="150" height="150" />
+          <img src={window.deviceURL} width="500" height="500" />
 
         </div>
 

@@ -69,7 +69,7 @@
    height: auto;
    width: 500px;
    margin: auto;
-   margin-top: 200px;
+   margin-top: 300px;
    margin-bottom: 300px;
 
 
@@ -308,17 +308,17 @@
 
 .tv {
    font-family: Arial, Helvetica, sans-serif;
-
    border-top: 4px solid gray;
    border-bottom: 4px solid gray;
    background-color: black;
    width: 100%;
-   height: 250px;
+   height: 500px;
    position: relative;
    display: flex;
    flex-direction: row;
    justify-content: space-around;
-   padding-top: 50px;
+   align-items: center;
+   padding-bottom: 50px;
    margin-top: 0;
 
     
@@ -335,7 +335,7 @@
    color: white;
    text-align: left;
    width: 400;
-   font-size: 34px;
+   font-size: 48px;
    margin-bottom: 0;
 }
 
@@ -343,8 +343,8 @@
    color: white;
    text-align: left;
    width: 400px;
-   font-size: 24px;
-   margin-bottom: 30px;
+   font-size: 32px;
+   /* margin-bottom: 30px; */
 
 }
 
@@ -355,15 +355,20 @@
    border-bottom: 4px solid gray;
    background-color: black;
    width: 100%;
-   height: 250px;
+   height: 500px;
    position: relative;
    display: flex;
    flex-direction: row-reverse;
    justify-content: space-around;
-   padding-top: 50px;
+   align-items: center;
+   padding-bottom: 50px;
+   /* padding-top: 50px; */
 
 } 
 
+/* .phone img {
+   height: 300px;
+} */
 
 
 
@@ -377,7 +382,7 @@
    color: white;
    text-align: left;
    width: 400;
-   font-size: 34px;
+   font-size: 48px;
    margin-bottom: 0;
    
 }
@@ -386,7 +391,7 @@
    color: white;
    text-align: left;
    width: 400px;
-   font-size: 24px;
+   font-size: 32px;
   
 }
 
@@ -396,11 +401,12 @@
    border-bottom: 4px solid gray;
    background-color: black;
    width: 100%;
-   height: 250px;
+   height: 500px;
    position: relative;
    display: flex;
    flex-direction: row;
    justify-content: space-around;
+   align-items: center;
    padding-top: 50px;
 
 } 
@@ -416,7 +422,7 @@
    color: white;
    text-align: left;
    width: 400;
-   font-size: 34px;
+   font-size: 48px;
    margin-bottom: 0;
 }
 
@@ -424,5 +430,5 @@
    color: white;
    text-align: left;
    width: 400px;
-   font-size: 24px;
+   font-size: 32px;
 }
