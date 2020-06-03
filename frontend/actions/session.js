@@ -30,7 +30,6 @@ export const clearErrors = () => ({
 
 export const login = (user) => dispatch => (Login(user))
    .then((user) => dispatch(receiveCurrentUser(user)))
-//    .then((res) => window.localStorage.setItem('currentUser', JSON.stringify(res)))
     .fail(err => dispatch(receiveErrors(err.responseJSON)));
 
 export const logout = () => dispatch => (Logout())
