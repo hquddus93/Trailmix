@@ -11,7 +11,8 @@ import Demo from './demo';
 //     formType: 'login',
 //     form: {
 //         email: "",
-//         password: ''
+//         password: '',
+//         username: ''
 //     }
 
 // });

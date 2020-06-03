@@ -24,6 +24,7 @@ const Splash = (props) => {
           <h2>Unlimited movies, TV shows, and more.</h2>
           <h3>  Watch anywhere. Cancel anytime. </h3> 
             <DemoContainer />
+            
             <span className='span'>
               <p>Want to make an account?</p>
               <Link to="/signup" id='signup-link' > Sign Up </Link>

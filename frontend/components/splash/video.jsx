@@ -4,12 +4,18 @@ import Splash from './splash'
 
 const VideosContainer = (props) => {
     return (
-        <>
-        <h1>Videos Will Be Here</h1>
-       
-       <button onClick={props.logout}>Logout</button>
-     
-        </>
+        <div className='video'>
+            <nav className='logout-nav'> 
+            <a href="/#/">
+                <img src="https://fontmeme.com/permalink/200602/b89239ba0483c23a0be252ebcabbe556.png"
+                    alt="netflix-font"
+                    border="0"
+                    id='logo' /></a>
+    
+            <button onClick={props.logout} id='logout-btn'>Logout</button>
+            </nav>
+        <h1>VIDEOS</h1>
+        </div>
     )
 };
 

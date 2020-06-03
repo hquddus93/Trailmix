@@ -7,12 +7,13 @@ import LoginForm from './loginForm';
 
 
 const mSTP = (state) => ({
-    errors: state.session.errors,
+    errors: state.errors.session,
     formType: 'login',
+   
     form: {
-        email: "",
-        password: ""
-    },
+        email: "email",
+        password: 'password',},
+        
     loggedIn: Boolean(state.session.id) 
     
 });
