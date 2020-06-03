@@ -5,6 +5,8 @@ class LoginForm extends React.Component {
     constructor(props) {
         super(props);
 
+        this.props.clearErrors();
+
         this.state = { email: "", password: ""},
         this.handleSubmit = this.handleSubmit.bind(this);
         this.renderErrors = this.renderErrors.bind(this)
