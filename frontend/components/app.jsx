@@ -1,19 +1,23 @@
 
 import React from "react";
-<<<<<<< HEAD
-// import GreetingContainer from "./greeting/greeting_container";
-=======
 import LoginContainer from './splash/login_container'
->>>>>>> auth
+import SignupContainer from './splash/signup_container'
+import { AuthRoute, ProtectedRoute } from '../util/route_util';
+import {Route, Redirect, Switch, Link} from 'react-router-dom';
+import VideoContainer from './splash/video_container';
+import Splash from './splash/splash';
 
 const App = () => (
     <div>
-        <h1>TrailMix</h1>
-<<<<<<< HEAD
-        {/* <GreetingContainer /> */}
-=======
-        <LoginContainer />
->>>>>>> auth
+       
+      
+        <Switch>
+            <AuthRoute exact path='/login' component={LoginContainer} />
+            <AuthRoute exact path='/signup' component={SignupContainer}/>
+            <ProtectedRoute path='/videos' component={VideoContainer} />
+            <AuthRoute exact path='/' component={Splash} />
+        </Switch>
+
     </div>
 );
 
