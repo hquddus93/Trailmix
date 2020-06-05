@@ -54,13 +54,34 @@ handleSubmit(e) {
         return(
 
             <div className='login-background'>
-                <a href="/">
+                <nav className='login-nav'>
+                    <a href="https://trailmix-aa.heroku-app.com.com/#/">
                     <img src="https://fontmeme.com/permalink/200602/b89239ba0483c23a0be252ebcabbe556.png"
                         alt="netflix-font"
                         border="0"
                         id='logo' 
                     />
                 </a>
+                <ul className='buttons'>
+                    <li>
+                        <a href='https://github.com/hquddus93'>
+                            <buton>
+                                <img src={window.gitURL} width="45" height="45" className='icon' />
+                            </buton>
+                        </a>
+                    </li>
+                    <li>
+                        <a href='https://www.linkedin.com/in/hira-quddus-94963413b/'>
+                            <buton >
+                                <img src={window.linkURL} width="55" height="45" className='icon' />
+                            </buton>
+                        </a>
+                    </li>
+                    <li>
+                        <DemoContainer />
+                    </li>
+                </ul>
+                </nav>
             
             <form onSubmit={this.handleSubmit} className='login-form'>
                 <h2>Sign In</h2>

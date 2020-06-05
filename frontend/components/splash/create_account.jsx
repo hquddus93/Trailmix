@@ -20,8 +20,12 @@ class CreateAccount extends React.Component {
  
     componentDidMount() {
         this.props.clearErrors();
-        this.setState({email: this.props.email})
+        // this.setState({email: this.state.email})
     }
+
+   
+
+    
 
     update(field) {
         return e => {
@@ -50,14 +54,14 @@ class CreateAccount extends React.Component {
         this.props.clearErrors();
         let user = this.state;
         this.props.signup(user);
-        this.setState({ email: "", password: "" })
+        this.setState({password: "" })
     }
 
     render() {
         return (
             <div className='create-account'>
                 <nav className='create-account-nav-bar'>
-                <a href="https://fontmeme.com/netflix-font/">
+                    <a href="https://trailmix-aa.heroku-app.com.com/#/">
                     <img src="https://fontmeme.com/permalink/200604/3150eaf395337ebc34eca4aae8e3c0bf.png"
                         alt="netflix-font"
                         border="0"
@@ -80,7 +84,7 @@ class CreateAccount extends React.Component {
                 We hate paperwork, too.</h3>
 
                     <input type='text' height='50' value={this.state.email} onChange={this.update('email')}/>
-                    
+                   
                
                     <input type='text' height='50' value={this.state.username} placeholder='Username' onChange={this.update('username')}/>
                     
