@@ -1,4 +1,5 @@
 import React from 'react';
+import DemoContainer from './demo_container';
 import {Redirect, Link, Route} from 'react-router-dom';
 
 class LoginForm extends React.Component {
@@ -52,8 +53,8 @@ handleSubmit(e) {
     render() {
         return(
 
-            <div>
-                <a href="/#">
+            <div className='login-background'>
+                <a href="/">
                     <img src="https://fontmeme.com/permalink/200602/b89239ba0483c23a0be252ebcabbe556.png"
                         alt="netflix-font"
                         border="0"
@@ -64,7 +65,6 @@ handleSubmit(e) {
             <form onSubmit={this.handleSubmit} className='login-form'>
                 <h2>Sign In</h2>
                 <p className='errors'>{this.renderErrors()}</p>
-                
                 <input type="text" 
                     placeholder='Email'
                     value={this.state.email}
@@ -74,10 +74,7 @@ handleSubmit(e) {
                     value={this.state.password}
                     onChange={this.update('password')}/>
                 <button>Sign In</button>
-                <span className='login-span'>
-                    <p>New to Netflix?</p>
-                        <Link to="/signup" id='span-link'> Sign Up Now.</Link>
-                </span>
+               
             </form>
 
             </div>

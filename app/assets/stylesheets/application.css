@@ -21,27 +21,67 @@
  }
 
  .nav-bar {
+
    display: flex;
    justify-content: space-between;
    flex-direction: row;
    align-items: center;
-   width: auto;
-   position: fixed;
+   padding-top: 10px;
+   width: 93%;
+   /* position: fixed; */
    top: 0; 
-   width: 98%;
+   /* width: 90%; */
+   margin: auto;
+ }
+
+ .buttons {
+    display: flex;
+    flex-direction: row;
+    width: 200px;
+    justify-content: space-between;
+    align-items: center;
+ }
+
+ .icon {
+    background-color: #e50419;
+    opacity: .9;
  }
 
  #signinbtn {
-   background-color: red;
+   background-color: #E50914;
    color: white;
    font-size: 16px;
-   padding: 10px;
-   padding-left: 20px;
-   padding-right: 20px;
+   padding-top: 8px;
+   padding-bottom: 8px;
+   padding-left: 17px;
+   padding-right: 17px;
+   border-radius: 3px;
+   border: none;
    align-self: center;
    margin-right: 20px; 
-   border-radius: 10%;
-   font-family: Arial, Helvetica, sans-serif;
+   font-weight: 300;
+   /* border-radius: 1%; */
+   font-family: sans-serif;
+   /* font: arial; */
+
+ }
+
+  .demo-btn {
+   background-color: #E50914;
+   color: white;
+   font-size: 16px;
+   padding-top: 8px;
+   padding-bottom: 8px;
+   padding-left: 17px;
+   padding-right: 17px;
+   border-radius: 3px;
+   border: none;
+   align-self: center;
+   /* margin-right: 20px;  */
+   font-weight: 300;
+   /* border-radius: 1%; */
+   font-family: sans-serif;
+   /* font: arial; */
 
  }
 
@@ -56,10 +96,6 @@
 
 }
 
- .nav-bar {
-   text-decoration: none;
-}
-
 
  .mid {
 
@@ -67,25 +103,33 @@
    height: auto;
    width: 500px;
    margin: auto;
-   margin-top: 300px;
-   margin-bottom: 300px;
-
+   margin-top: 150px;
+   margin-bottom: 20px;
 
  }
-
-.demo-btn {
-    background-color: red;
+  .mid h2 {
     color: white;
-    width: 200px;
-    height: 50px;
-    font-weight: bold;
-    border-radius: 10%;
-    font-size: 30px;
-   font-family: Arial, Helvetica, sans-serif;
+    font-size: 48px;
+    font-family: Helvetica;
+    font-weight: 700;
+    margin-bottom: 10px;
+  
  }
+
+
+ .mid h3 {
+   color: white;
+   font-size: 25px;
+   font-family: Helvetica;
+   font-weight: 400;
+   margin-top: 30px;
+ }
+
+
+
 
  
- main {
+ .main {
    background-image: url(Netflix-Background.jpg);
    position: absolute;
    top: 0; 
@@ -96,7 +140,12 @@
    min-width: 100%;
    height: 1000px;
  }
+
+ /* .div {
+    background: rgba(70, 72, 82, 0.9);
+ } */
    
+
 
 /* 
 .splash {
@@ -105,46 +154,36 @@
   
  } */
 
- .span {
-    display: flex;
-    justify-content: center;
-    flex-direction: row;
-    align-items: center;
-    color:white;
-    font-family: Arial, Helvetica, sans-serif;
- }
-
- .span p {
-    margin-right: 5px;
-    font-family: Arial, Helvetica, sans-serif;
- }
-
- #signup-link {
-    margin-left: 5px;
-    color: white;
-    text-decoration: none;
-    font-family: Arial, Helvetica, sans-serif;
- }
-
- .mid h2 {
-    color: white;
-    font-size: 48px;
-    font-family: Arial, Helvetica, sans-serif;
-  
- }
 
 
- .mid h3 {
-    color: white;
-    font-size: 24px;
-    font-family: Arial, Helvetica, sans-serif;
- }
+.signup-text {
+   color: #FFFFFF;
+   font-family: Helvetica;
+   font-size: 18px;
+   text-align: center;
+   margin-top: 15px;
+   margin-bottom: 175px;
+}
+
+.login-background {
+     background-image: url(Netflix-Background.jpg);
+   position: absolute;
+   top: 0; 
+   left: 0; 
+   right: 0;
+   bottom: 0;
+}
 
 
  .login-form {
-    display: flex;
-    /* justify-content: space-around; */
-    flex-direction: column;
+ 
+
+   /* min-width: 100%; */
+   /* height: 1000px; */
+   /* justify-content: space-around; */
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
     height: 500px;
     width: 365px;
     background-color: black;
@@ -154,7 +193,7 @@
     color: white;
     border-radius: 2%;
     font-size: 24px;
-    box-sizing: content-box;
+    /* box-sizing: content-box; */
     padding-left: 70px;
     padding-right: 15px;
     padding-bottom: 30px;
@@ -173,78 +212,6 @@
 
  .login-form button {
    background-color: red;
-    color: white;
-    font-weight: bold;
-    border-radius: 10%;
-    font-size: 30px;
-   height: 50px;
-    width: 300px;
-    margin-top: 40px;
-    font-family: Arial, Helvetica, sans-serif;
- }
-
- 
- 
- .login-span {
-    display: flex;
-    justify-content: left;
-    flex-direction: row;
-    align-items: center;
-    font-family: Arial, Helvetica, sans-serif;
-    margin-top: 20px;
-    
-   }
-
-   .login-span p {
-      color: gray;
-      font-size: 16px;
-      font-family: Arial, Helvetica, sans-serif;
-
-
-   }
-
-   #span-link {
-      color:white;
-      font-size: 16px;
-      font-family: Arial, Helvetica, sans-serif;
-      text-decoration: none;
-      margin-left: 5px;
-
-   }
-
-   .signup-form {
-      display: flex;
-      /* justify-content: space-around; */
-      flex-direction: column;
-     /* height: 500px; */
-      width: 450px;
-      height: fit-content;
-      background-color: black;
-      opacity: .8;
-      margin: auto;
-      margin-top: 10px;
-      color: white;
-      padding: 20px;
-      border-radius: 2%;
-      font-size: 24px;
-      box-sizing: border-box;
-      padding-left: 70px;
-      padding-right: 15px;
-      padding-bottom: 100px;
-      align-items: left;
-      font-family: Arial, Helvetica, sans-serif;
-   }
-
-   .signup-form input {
-    height: 50px;
-    width: 300px;
-    margin-top: 20px;
-    font-family: Arial, Helvetica, sans-serif;
-   
- }
-
- .signup-form button {
-   background-color: red;
    color: white;
    font-weight: bold;
    border-radius: 10%;
@@ -254,6 +221,109 @@
    margin-top: 40px;
    font-family: Arial, Helvetica, sans-serif;
  }
+
+ 
+.signup-form {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: row;
+   width: 700px;
+   margin-left: 250px;
+   margin-bottom: 10px;
+ 
+}
+
+.signup-form input {
+   height: 55px;
+   width: 425px;
+   border-radius: 1px gray;
+   /* border: 1px solid gray; */
+
+   /* margin-top: 20px;
+   margin-left: 0; */
+   /* align-self: left; */
+   font-family: Helvetica;
+  
+   
+ }
+
+ .signup-form button {
+   /* border: 1px solid #E50419; */
+
+   margin-left: 2px;
+   background-color: #E50419;
+   color: white;
+   border: none;
+   /* font-weight: bold; */
+   border-radius: 1px #E50419;
+   font-size: 30px;
+   height: 55px;
+   width: 201px;
+   /* margin-top: 40px; */
+   font-family: Helvetica; 
+ }
+
+ .create-account-nav-bar {
+   display: flex;
+   justify-content: space-between;
+   flex-direction: row;
+   align-items: center;
+   padding-top: 10px;
+   width: 50%;
+   /* position: fixed; */
+   top: 0; 
+   width: 100%;
+   margin: auto;
+   border-bottom: 1px solid gray;
+ }
+
+ .create-account-text {
+   display: flex;
+   flex-direction: column;
+   justify-content: left;
+   width: 450px;
+   height: fit-content;
+   margin-left: 390px;
+   margin-top: 50px;
+
+ }
+
+
+  .cat-h2 {
+     font-size: 26px;
+     font-family: Helvetica;
+     font-weight: 500;
+
+
+
+  }
+
+  .create-account-text input {
+     height: 50px;
+     margin-bottom: 10px;
+  }
+
+  .cat-h3 {
+     font-family: Helvetica;
+     font-size: 14px;
+     font-weight: 300;
+     margin-top: 7px;
+     margin-bottom: 10px;
+
+
+  }
+
+.create-account-text button {
+   background-color: #E50419;
+   color: white;
+   height: 50px;
+   width: 100%;
+   font-family: Helvetica;
+   font-size: 18px;
+   border: none
+}
+
 
   #logout-btn {
    background-color: red;
@@ -294,6 +364,16 @@
    text-align: left;
    font-family: Arial, Helvetica, sans-serif;
 
+ }
+
+ .signup-error {
+   /* width: 425px; */
+   color: orange;
+   font-size: 16px;
+   text-align: left;
+   font-family: Helvetica;
+   margin-left: 285px;
+
 
  }
 
@@ -317,8 +397,7 @@
    justify-content: space-around;
    align-items: center;
    padding-bottom: 50px;
-   margin-top: 0;
-
+   margin-top: 1000px;
     
 } 
 
@@ -334,7 +413,7 @@
    text-align: left;
    width: 400;
    font-size: 48px;
-   margin-bottom: 0;
+   margin-bottom: 15px;
 }
 
 .tv p {
@@ -349,10 +428,10 @@
 
 .phone {
    font-family: Arial, Helvetica, sans-serif;
-
+   /* align-self: left; */
    border-bottom: 4px solid gray;
    background-color: black;
-   width: 100%;
+   width: auto;
    height: 500px;
    position: relative;
    display: flex;
@@ -360,9 +439,12 @@
    justify-content: space-around;
    align-items: center;
    padding-bottom: 50px;
+   padding-right: 30px;
    /* padding-top: 50px; */
 
 } 
+
+
 
 /* .phone img {
    height: 300px;
@@ -379,9 +461,9 @@
 .phone h2 {
    color: white;
    text-align: left;
-   width: 400;
+   width: 390px;
    font-size: 48px;
-   margin-bottom: 0;
+   margin-bottom: 15px;
    
 }
 
@@ -421,7 +503,7 @@
    text-align: left;
    width: 400;
    font-size: 48px;
-   margin-bottom: 0;
+   margin-bottom: 15px;
 }
 
 .watch p {
