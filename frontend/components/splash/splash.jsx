@@ -14,25 +14,39 @@ const Splash = (props) => {
         </div> */}
         <div className='main'>
           <nav className='nav-bar'>
-            <a href="https://fontmeme.com/netflix-font/">
+            <a href="https://trailmix-aa.heroku-app.com.com/#/">
               <img src="https://fontmeme.com/permalink/200604/3150eaf395337ebc34eca4aae8e3c0bf.png" 
               alt="netflix-font" 
               border="0"
                 width='125'
                 height='50'
                 id='logo'/></a>
-              <div className='buttons'>
 
-              {/* <img src={window.gitURL} width="50" height="50" className='icon'/>
+              <ul className='buttons'>
+              <li>
+                <a href='https://github.com/hquddus93'>
+                  <button> 
+                    <img src={window.gitURL} width="70" height="45" className='icon'/>
+                  </button>
+                </a>
+              </li>
+              <li>
+                <a href='https://www.linkedin.com/in/hira-quddus-94963413b/'>
+                  <button > 
+                    <img src={window.linkURL} width="55" height="45" className='icon'/>
+                  </button>
+                </a>
+              </li>
+                <li>
+                  <DemoContainer />
+              </li>
+              <li>
+                  <Link to='/login' >
+                    <button id='signinbtn'>Sign In</button>
+                  </Link>
 
-              <img src={window.linkURL} width="50" height="50" className='icon'/> */}
-
-
-                <DemoContainer />
-                <Link to='/login' className='signin-btn'>
-                  <button id='signinbtn'>Sign In</button>
-                </Link>
-              </div>
+              </li>
+              </ul>
           </nav>
 
           <div className='mid'>
@@ -54,7 +68,7 @@ const Splash = (props) => {
             <p>Watch on Smart TVs, Playstation, Xbox, Chromecast, Apple TV, Blu-ray players, and more.</p>
           </div>
 
-            <img src={window.tvURL} width="500" height="500"/>
+            <img src={window.tvURL} width="400" height="400"/>
 
           </div>
 
@@ -65,7 +79,7 @@ const Splash = (props) => {
             <p> Save your favorites easily and always have something to watch.</p>
             </div>
 
-          <img src={window.mobileURL} width="500" height="500" />
+          <img src={window.mobileURL} width="400" height="400" />
 
           </div>
 
@@ -75,7 +89,7 @@ const Splash = (props) => {
             <p>Stream unlimited movies and TV shows on your phone, tablet, laptop, and TV without paying more.</p>
           </div>
 
-          <img src={window.deviceURL} width="500" height="500" />
+          <img src={window.deviceURL} width="400" height="400" />
 
         </div>
 

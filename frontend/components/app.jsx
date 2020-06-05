@@ -4,11 +4,10 @@ import LoginContainer from './splash/login_container'
 import SignupContainer from './splash/signup_container'
 import { AuthRoute, ProtectedRoute, SignRoute } from '../util/route_util';
 import {Route, Redirect, Switch, Link} from 'react-router-dom';
-import VideoContainer from './splash/video_container';
+import VideoContainer from './videos/video_container';
 import CreateAccountContainer from './splash/create_account_container';
 import Splash from './splash/splash';
 import Complete from './splash/complete';
-import MasterSignup from "./splash/pseudo-signup";
 
 const App = () => (
     <div>
