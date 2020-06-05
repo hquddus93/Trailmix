@@ -6,12 +6,17 @@ class LoginForm extends React.Component {
     constructor(props) {
         super(props);
 
-        this.props.clearErrors();
+     
 
         this.state = { email: "", password: ""},
         this.handleSubmit = this.handleSubmit.bind(this);
         this.renderErrors = this.renderErrors.bind(this)
     };
+
+    componentDidMount() {
+        this.props.clearErrors();
+    }
+    
 
     update(field) {
         return e => {
@@ -21,32 +26,69 @@ class LoginForm extends React.Component {
         }
     };
 
+ handleEmailError(){
+    if (this.props.errors.indexOf("Please enter an email") > -1) {
+        let input = document.getElementById('login-input')
+        input.className = 'input-error'
+        return "Please enter an email"
+    }
+
+ }
+
+ handlePasswordErr() {
+     if (this.props.errors.indexOf("Please enter a password") > -1){
+         let input = document.getElementById('login-input-pw')
+         input.className = 'input-error'
+         return "Please enter a password"
+
+    }
+}
+
+handleGeneralError() {
+    if (this.props.errors.indexOf('Invalid email/password combination') > -1) {
+        return 'Invalid email/password combination'
+    }
+}
+
+
 handleSubmit(e) {
 
     e.preventDefault();
-    this.props.clearErrors();
     let user = this.state;
-    this.props.login(user);
+    this.props.login(user)
+    // this.renderErrors();
+
     this.setState({email: "", password: ""})
 
 };
 
 
-    // handleDemo() {
-    //     this.props.login(this.props.form)
-    // }
-    renderErrors() {
 
-        if (this.props.errors.length > 0) {
-            return (
-                this.props.errors.map((error, i) => (   
-                    <p id='errors'
-                        key={`error-${i}`}>
-                            {error}      
-                    </p>
-                ))
-            )
+    renderErrors() {
+     
+
+        let errs = this.props.errors;
+
+        if (errs === ["Please enter an email", "Please enter a password"]) {
+            
+            this.emailErr = "Please enter an email" 
+            this.passwordErr = "Please enter a password"
+        } else if (errs === ["Please enter a password"]) {
+            
+
+            this.passwordErr = "Please enter a password"
+        } else if (errs === ["Please enter an email"]) {
+            
+            this.emailErr = "Please enter an email"
         }
+        else if (errs === ['Invalid email/password combination']) {
+            
+            this.generalErr = 'Invalid email/password combination'
+        } else {
+            
+            this.generalErr = ""
+        }
+     
 
     };
 
@@ -62,8 +104,8 @@ handleSubmit(e) {
                         id='logo' 
                     />
                 </a>
-                <ul className='buttons'>
-                    <li>
+                {/* <ul className='buttons'> */}
+                    {/* <li>
                         <a href='https://github.com/hquddus93'>
                             <buton>
                                 <img src={window.gitURL} width="45" height="45" className='icon' />
@@ -76,27 +118,38 @@ handleSubmit(e) {
                                 <img src={window.linkURL} width="55" height="45" className='icon' />
                             </buton>
                         </a>
-                    </li>
-                    <li>
-                        <DemoContainer />
-                    </li>
-                </ul>
+                    </li> */}
+                 <DemoContainer />
+           
+
                 </nav>
             
             <form onSubmit={this.handleSubmit} className='login-form'>
                 <h2>Sign In</h2>
-                <p className='errors'>{this.renderErrors()}</p>
+                    <p className='errors'>{this.handleGeneralError()}</p>
                 <input type="text" 
                     placeholder='Email'
                     value={this.state.email}
-                    onChange={this.update('email')}/>
+                    onChange={this.update('email')}
+                    id='login-input'
+                    className='default'/>
+                <p className='errors'>{this.handleEmailError()}</p>
                 <input type="password" 
                     placeholder='Password'
                     value={this.state.password}
-                    onChange={this.update('password')}/>
+                    onChange={this.update('password')}
+                    id='login-input-pw'
+                    className='default'/>
+                    <p className='errors'>{this.handlePasswordErr()}</p>
                 <button>Sign In</button>
                
+               <div className='login-form-text'>
+                <h3>New to TrailMix?</h3>
+                <Link to='/' id='signup-link-on-login-form'>Sign Up Now</Link>
+
+               </div>
             </form>
+
 
             </div>
         )

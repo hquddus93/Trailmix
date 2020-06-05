@@ -20,14 +20,42 @@ class CreateAccount extends React.Component {
  
     componentDidMount() {
         this.props.clearErrors();
-        // this.setState({email: this.state.email})
+       
+    }
+    
+   
+handleEmailError() {
+    if (this.props.errors.indexOf("Email can't be blank") > -1) {
+        let input = document.getElementById('signup-input')
+        input.className = 'input-error-signup'
+        return "Please enter an email"
     }
 
-   
+}
+
+
+handleGeneralError() {
+    if (this.props.errors.indexOf("Username can't be blank") > -1) {
+        let input = document.getElementById('signup-input-un')
+        input.className = 'input-error-signup'
+        return "Username can't be blank"
+    }
+}
+
+handlePasswordError() {
+    debugger;
+    if (this.props.errors.indexOf("Password is too short (minimum is 6 characters)") > -1) {
+        let input = document.getElementById('signup-input-pw')
+        input.className = 'input-error-signup'
+        return "Password is too short(minimum is 6 characters)"
+
+    }
+}
 
     
 
     update(field) {
+        
         return e => {
             this.props.clearErrors()
             this.setState({ [field]: e.target.value })
@@ -78,19 +106,21 @@ class CreateAccount extends React.Component {
 
                 
                 <form className='create-account-text' onSubmit={this.handleSubmit}>
-                   {this.renderErrors()}
+                   {/* {this.renderErrors()} */}
                 <h2 className='cat-h2'> Create a password to start your membership.</h2>
                 <h3 className='cat-h3'>Just a few more steps and you're done!
                 We hate paperwork, too.</h3>
 
-                    <input type='text' height='50' value={this.state.email} onChange={this.update('email')}/>
+                    <input type='text' height='50' value={this.state.email} placeholder='Email' onChange={this.update('email')} id ='signup-input'/>
                    
+                    <p className='ca-errors'>{this.handleEmailError()}</p>
                
-                    <input type='text' height='50' value={this.state.username} placeholder='Username' onChange={this.update('username')}/>
-                    
+                    <input type='text' height='50' value={this.state.username} placeholder='Username' onChange={this.update('username')} id='signup-input-un'/>
+                    <p className='ca-errors'>{this.handleGeneralError()}</p>
          
-                    <input type='password' height='50' value={this.state.password} placeholder='Password' onChange={this.update('password')}/>
-                     
+                    <input type='password' height='50' value={this.state.password} placeholder='Password' onChange={this.update('password')} id='signup-input-pw'/>
+                
+                    <p className='ca-errors'>{this.handlePasswordError()}</p>
               
                     
                     <button>CONTINUE</button>
