@@ -1,9 +1,19 @@
-import {connect} from 'react-redux';
-import {logout} from '../../actions/session';
-import Videos from './video'
+import { connect } from 'react-redux';
+import { logout } from '../../actions/session';
 
-const mDTP = dispatch => ({
-    logout: () => dispatch(logout())
+import { fetchAllVideos } from '../../actions/video'
+import VideosIndex from './video';
+import { render } from 'react-dom';
+
+
+
+const mSTP = (state) => ({
+    videos: Object.values(state.entities.videos)
 });
 
-export default connect(null, mDTP)(Videos)
+const mDTP = dispatch => ({
+    logout: () => dispatch(logout()),
+    fetchAllVideos: () => dispatch(fetchAllVideos())
+});
+
+export default connect(mSTP, mDTP)(VideosIndex)

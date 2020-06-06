@@ -64,34 +64,6 @@ handleSubmit(e) {
 
 
 
-    renderErrors() {
-     
-
-        let errs = this.props.errors;
-
-        if (errs === ["Please enter an email", "Please enter a password"]) {
-            
-            this.emailErr = "Please enter an email" 
-            this.passwordErr = "Please enter a password"
-        } else if (errs === ["Please enter a password"]) {
-            
-
-            this.passwordErr = "Please enter a password"
-        } else if (errs === ["Please enter an email"]) {
-            
-            this.emailErr = "Please enter an email"
-        }
-        else if (errs === ['Invalid email/password combination']) {
-            
-            this.generalErr = 'Invalid email/password combination'
-        } else {
-            
-            this.generalErr = ""
-        }
-     
-
-    };
-
     render() {
         return(
 

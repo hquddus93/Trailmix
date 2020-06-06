@@ -43,7 +43,7 @@ handleGeneralError() {
 }
 
 handlePasswordError() {
-    debugger;
+
     if (this.props.errors.indexOf("Password is too short (minimum is 6 characters)") > -1) {
         let input = document.getElementById('signup-input-pw')
         input.className = 'input-error-signup'

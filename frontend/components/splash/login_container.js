@@ -18,7 +18,7 @@ const mSTP = (state) => ({
     
 });
 
-debugger;
+
 const mDTP = dispatch => ({
     login: (user) => dispatch(login(user)),
     clearErrors: () => dispatch(clearErrors())

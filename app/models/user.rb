@@ -7,9 +7,21 @@ class User < ApplicationRecord
     attr_reader :password
     after_initialize :ensure_session_token
 
-    # has_one :list
-    # has_many :previously_viewed_videos
-    # has_many :videos_on_my_list
+  has_one :list,
+    foreign_key: :user_id,
+    class_name: :List
+
+    has_many :previous_views,
+    class_name: :PreviousView,
+    foreign_key: :user_id
+
+    has_many :previously_viewed_videos,
+    through: :previous_views,
+    source: :video
+
+    has_many :videos_on_list,
+    through: :list,
+    source: :video
 
     def password=(password)
         @password = password
