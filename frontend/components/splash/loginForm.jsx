@@ -10,17 +10,26 @@ class LoginForm extends React.Component {
 
         this.state = { email: "", password: ""},
         this.handleSubmit = this.handleSubmit.bind(this);
-        this.renderErrors = this.renderErrors.bind(this)
+    
     };
 
     componentDidMount() {
         this.props.clearErrors();
     }
+
+    resetInputClasses() {
+     let input = document.getElementById('login-input')
+        input.className = 'default';
+        let input2 = document.getElementById('login-input-pw');
+        input2.className = 'default';
+
+    }
     
 
     update(field) {
         return e => {
-            this.props.clearErrors()
+            this.props.clearErrors();
+            this.resetInputClasses();
             this.setState({[field]: e.target.value})
         
         }
@@ -46,6 +55,8 @@ class LoginForm extends React.Component {
 
 handleGeneralError() {
     if (this.props.errors.indexOf('Invalid email/password combination') > -1) {
+        let input = document.getElementById('general-errors-login')
+        input.className = 'general-errors-login'
         return 'Invalid email/password combination'
     }
 }
@@ -98,21 +109,22 @@ handleSubmit(e) {
             
             <form onSubmit={this.handleSubmit} className='login-form'>
                 <h2>Sign In</h2>
-                    <p className='errors'>{this.handleGeneralError()}</p>
+                    <p id='general-errors-login'>{this.handleGeneralError()}</p>
                 <input type="text" 
                     placeholder='Email'
                     value={this.state.email}
                     onChange={this.update('email')}
                     id='login-input'
-                    className='default'/>
-                <p className='errors'>{this.handleEmailError()}</p>
+                    className='default' />
+                    {/* // onBlur={() => this.handleEmailError()}/> */}
+                { <p className='errors'>{this.handleEmailError()}</p> }
                 <input type="password" 
                     placeholder='Password'
                     value={this.state.password}
                     onChange={this.update('password')}
                     id='login-input-pw'
-                    className='default'/>
-                    <p className='errors'>{this.handlePasswordErr()}</p>
+                    className='default' />       
+                     <p className='errors'>{this.handlePasswordErr()}</p> 
                 <button>Sign In</button>
                
                <div className='login-form-text'>

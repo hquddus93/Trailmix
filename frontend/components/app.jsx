@@ -8,6 +8,7 @@ import VideoContainer from './videos/video_container';
 import CreateAccountContainer from './splash/create_account_container';
 import Splash from './splash/splash';
 import Complete from './splash/complete';
+import GenreContainer from './genres/genre_index_container'
 
 const App = () => (
     <div>
@@ -18,6 +19,7 @@ const App = () => (
             <SignRoute exact path='/signup' component={SignupContainer}/>
             <AuthRoute exact path='/create_account' component={CreateAccountContainer}/>
             <ProtectedRoute path='/videos' component={VideoContainer} />
+            <ProtectedRoute path='/genres' component={GenreContainer} />
             <Route exact path='/complete' component={Complete}/>
             <AuthRoute exact path='/' component={Splash} />
   

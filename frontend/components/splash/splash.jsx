@@ -23,18 +23,16 @@ const Splash = (props) => {
                 id='logo'/></a>
 
               <ul className='buttons'>
-              {/* <li>
+              <li>
                 <a href='https://github.com/hquddus93'>    
-                  <i class="fa fa-github" aria-hidden="true"></i>
+                  <i class="fab fa-github" ></i>
                 </a>
               </li>
               <li>
                 <a href='https://www.linkedin.com/in/hira-quddus-94963413b/'>
-                  <button > 
-                    <img src={window.linkURL} width="55" height="45" className='icon'/>
-                  </button>
+                  <i class="fab fa-linkedin" aria-hidden="true"></i>
                 </a>
-              </li> */}
+              </li>
                 <li>
                   <DemoContainer />
               </li>
@@ -90,6 +88,7 @@ const Splash = (props) => {
           <img src={window.deviceURL} width="400" height="400" />
 
         </div>
+
 
 
 

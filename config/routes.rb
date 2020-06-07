@@ -10,7 +10,7 @@ Rails.application.routes.draw do
 
     resource :session, only: [:create, :destroy]
     resources :videos, only: [:index, :show]
-    resources :genres, only: [:index]
+    resources :genres, only: [:index, :show]
     resources :shows, only: [:show]
 
   end
