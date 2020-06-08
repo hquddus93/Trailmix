@@ -25,15 +25,15 @@ nav h1{
     /* margin-left: 500px; */
     margin-right: 0px;
  }
-.fab {
-   font-size: 35px;
-   color: #49393b;
+#splash-fab {
+   font-size: 40px;
+   color: gray;
    /* color:pink; */
    /* z-index: 40; */
 }
 
-.fab:hover {
-   color: gray;
+#splash-fab:hover {
+   color: rgb(224, 136, 136);
 }
 
  .buttons li {
@@ -421,16 +421,7 @@ nav h1{
 
  }
 
- .logout-nav {
-      display: flex;
-      justify-content: space-between;
-      flex-direction: row;
-      align-items: center;
-      width: auto;
-      position: fixed;
-      top: 0; 
-      width: 98%;
- }
+
 
  .video h1 {
     color: teal;

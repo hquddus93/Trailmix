@@ -1,21 +1,15 @@
 import React from 'react';
 
-// class DramaVideos extends React.Component{
 
-// componentDidMount() {
-//     debugger
-//     this.props.fetchAllVideos()
-//     debugger
-// }
-const DramaVideos = (props) => {
+const ComedyVideos = (props) => {
 
     if (props.videos === undefined) {
         return <></>
     } else {
-   
+      
         return (
             props.videos.map(video => {
-                if (video.genres.includes("Drama")) {
+                if (video.genres.includes("Comedy")) {
                     return (
                         <div>
                             {/* <h1>Action</h1> */}
@@ -36,4 +30,4 @@ const DramaVideos = (props) => {
 };
 
 
-export default DramaVideos;
+export default ComedyVideos;

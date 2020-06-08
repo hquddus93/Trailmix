@@ -25,12 +25,12 @@ const Splash = (props) => {
               <ul className='buttons'>
               <li>
                 <a href='https://github.com/hquddus93'>    
-                  <i class="fab fa-github" ></i>
+                  <i className="fab fa-github" id='splash-fab'></i>
                 </a>
               </li>
               <li>
                 <a href='https://www.linkedin.com/in/hira-quddus-94963413b/'>
-                  <i class="fab fa-linkedin" aria-hidden="true"></i>
+                  <i className="fab fa-linkedin" id='splash-fab'></i>
                 </a>
               </li>
                 <li>

@@ -1,3 +1,5 @@
+
+
 @videos.each do |video|
     # debugger
     json.set! video.id do

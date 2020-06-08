@@ -12,4 +12,13 @@ export const fetchVideo = (video) => (
         url: `api/videos/${video.id}`,
         // data: { video }
     })
+);
+
+
+export const searchVideos = (keyword) => (
+    $.ajax({
+        method: 'GET',
+        url: `api/videos`,
+        data: { keyword }
+    })
 )

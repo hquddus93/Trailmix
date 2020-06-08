@@ -1,24 +1,17 @@
 import React from 'react';
 
-// class DramaVideos extends React.Component{
 
-// componentDidMount() {
-//     debugger
-//     this.props.fetchAllVideos()
-//     debugger
-// }
-const DramaVideos = (props) => {
+const Family = (props) => {
 
     if (props.videos === undefined) {
         return <></>
     } else {
-   
+      
         return (
             props.videos.map(video => {
-                if (video.genres.includes("Drama")) {
+                if (video.genres.includes("Family")) {
                     return (
                         <div>
-                            {/* <h1>Action</h1> */}
                             <p>{video.title}</p>
                             <p>{video.year}</p>
                             <p>{video.description}</p>
@@ -36,4 +29,4 @@ const DramaVideos = (props) => {
 };
 
 
-export default DramaVideos;
+export default Family;

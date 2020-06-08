@@ -22,6 +22,8 @@ class LoginForm extends React.Component {
         input.className = 'default';
         let input2 = document.getElementById('login-input-pw');
         input2.className = 'default';
+        let input3 = document.getElementById('general-errors-login')
+        input3.className = 'default';
 
     }
     
