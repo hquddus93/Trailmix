@@ -187,20 +187,6 @@ nav h1{
    height: 1000px;
  }
 
- /* .div {
-    background: rgba(70, 72, 82, 0.9);
- } */
-   
-/* .main background {
-   filter: grayscale(25%);
-} */
-
-/* 
-.splash {
-    height: 2000px;
-    width: 100%;
-  
- } */
 
 
 
@@ -239,15 +225,12 @@ nav h1{
     height: 500px;
     width: 365px;
     background-color: rgba(0, 0, 0, 0.8);
-    /* filter: grayscale(90%) */
-    /* opacity: .8; */
     margin: auto;
     margin-top: 30px;
     margin-bottom: 80px;
     color: white;
     border-radius: 2%;
     font-size: 24px;
-    /* box-sizing: content-box; */
     padding-left: 70px;
     padding-right: 15px;
     padding-bottom: 30px;
@@ -519,10 +502,7 @@ nav h1{
 
  }
 
- /* #errors li {
-    margin-left: 0;
-    text-align: left;
- } */
+
 
  
 
@@ -588,9 +568,7 @@ nav h1{
 
 
 
-/* .phone img {
-   height: 300px;
-} */
+
 
 
 
@@ -677,6 +655,3 @@ nav h1{
    justify-content: row;
 }
 
-/* .default {
-   display: hidden;
-} */

@@ -101,7 +101,7 @@ handleSubmit(e) {
                 <h2>Sign In</h2>
                     <p id='general-errors-login' className='default'>{this.handleGeneralError()}</p>
                 <input type="text" 
-                    placeholder='Email'
+                    placeholder='    Email'
                     value={this.state.email}
                     onChange={this.update('email')}
                     id='login-input'
@@ -109,7 +109,7 @@ handleSubmit(e) {
                     {/* // onBlur={() => this.handleEmailError()}/> */}
                 { <p className='errors'>{this.handleEmailError()}</p> }
                 <input type="password" 
-                    placeholder='Password'
+                    placeholder='    Password'
                     value={this.state.password}
                     onChange={this.update('password')}
                     id='login-input-pw'
