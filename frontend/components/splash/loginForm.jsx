@@ -19,9 +19,9 @@ class LoginForm extends React.Component {
 
     resetInputClasses() {
      let input = document.getElementById('login-input')
-        input.className = 'default';
+        input.className = 'login-form-input-a';
         let input2 = document.getElementById('login-input-pw');
-        input2.className = 'default';
+        input2.className = 'login-form-input-b';
         let input3 = document.getElementById('general-errors-login')
         input3.className = 'default';
 
@@ -30,8 +30,8 @@ class LoginForm extends React.Component {
 
     update(field) {
         return e => {
-            this.props.clearErrors();
             this.resetInputClasses();
+            this.props.clearErrors();
             this.setState({[field]: e.target.value})
         
         }
@@ -66,6 +66,8 @@ handleGeneralError() {
 
 handleSubmit(e) {
 
+    this.resetInputClasses();
+    this.props.clearErrors();
     e.preventDefault();
     let user = this.state;
     this.props.login(user)
@@ -89,21 +91,7 @@ handleSubmit(e) {
                         id='logo' 
                     />
                 </a>
-                {/* <ul className='buttons'> */}
-                    {/* <li>
-                        <a href='https://github.com/hquddus93'>
-                            <buton>
-                                <img src={window.gitURL} width="45" height="45" className='icon' />
-                            </buton>
-                        </a>
-                    </li>
-                    <li>
-                        <a href='https://www.linkedin.com/in/hira-quddus-94963413b/'>
-                            <buton >
-                                <img src={window.linkURL} width="55" height="45" className='icon' />
-                            </buton>
-                        </a>
-                    </li> */}
+         
                  <DemoContainer />
            
 
@@ -111,13 +99,13 @@ handleSubmit(e) {
             
             <form onSubmit={this.handleSubmit} className='login-form'>
                 <h2>Sign In</h2>
-                    <p id='general-errors-login'>{this.handleGeneralError()}</p>
+                    <p id='general-errors-login' className='default'>{this.handleGeneralError()}</p>
                 <input type="text" 
                     placeholder='Email'
                     value={this.state.email}
                     onChange={this.update('email')}
                     id='login-input'
-                    className='default' />
+                        className='login-form-input-a' />
                     {/* // onBlur={() => this.handleEmailError()}/> */}
                 { <p className='errors'>{this.handleEmailError()}</p> }
                 <input type="password" 
@@ -125,7 +113,7 @@ handleSubmit(e) {
                     value={this.state.password}
                     onChange={this.update('password')}
                     id='login-input-pw'
-                    className='default' />       
+                    className='login-form-input-b' />       
                      <p className='errors'>{this.handlePasswordErr()}</p> 
                 <button>Sign In</button>
                
@@ -136,6 +124,23 @@ handleSubmit(e) {
                </div>
             </form>
 
+                <footer className='login-footer'>
+                    <ul className='buttons'>
+                        <li id='splash-questions'>Questions?</li>
+                        <li>
+                            <a href='https://github.com/hquddus93'>
+                                <i className="fab fa-github" id='splash-fab'></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href='https://www.linkedin.com/in/hira-quddus-94963413b/'>
+                                <i className="fab fa-linkedin" id='splash-fab'></i>
+                            </a>
+                        </li>
+                    </ul>
+
+
+                </footer>
 
             </div>
         )

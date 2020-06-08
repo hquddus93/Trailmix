@@ -14,21 +14,21 @@ const ActionVideos = (props) => {
             } else {
                 
             return(
-            props.videos.map(video => {
-                if (video.genres.includes("Action")) {
-                return (
-                    <div>
-                        {/* <h1>Action</h1> */}
-                        <p>{video.title}</p>
-                        <p>{video.year}</p>
-                        <p>{video.description}</p>
-                        {/* <video controls="controls" preload="none" onMouseOver={event => event.target.play()}>
-                            <source type="video/mp4" src={props.video.videoUrl} height="300" width='400' />
-                        </video> */}
-    
-                    </div>
-                )}
-            }))
+                <div className='video-row'>
+                    {props.videos.map(video => {
+                        if (video.genres.includes("Action")) {
+                            return (
+
+                                <video key={video.id} className='video-row-vid' autoplay={true} src={video.videoUrl} height='150' width='250' onMouseOver={event => event.target.play()}
+                                    onMouseOut={event => event.target.pause()}></video>
+                            )
+
+                        }
+                    })
+                    }
+
+                </div>
+                )
             }
 
 

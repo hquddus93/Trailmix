@@ -45,9 +45,9 @@
     top: 45px;
     display: none;
     position: absolute;
-    right: 30px;
+    right: 17px;
     background-color: #f9f9f9;
-    min-width: 160px;
+    min-width: 100px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
     border: 1px solid wheat;
@@ -60,20 +60,55 @@
     text-decoration: none;
     display: block;
 }
+/* .dropdown-content li:hover {
+    background-color: rgb(32, 30, 30);
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+} */
 
+.dropdown-content li a {
+    color: White;
+    font-family: Helvetica;
+    text-decoration: none;
+    font-size: 13px;
+    text-align: left;
+
+}
+.dropdown-content li a:hover {
+    text-decoration: underline;
+
+}
+
+.dropdown-content li Link {
+    color: White;
+    font-family: Helvetica;
+    text-decoration: none;
+    font-size: 13px;
+    padding-left: 50px;
+    text-align: right;
+
+}
+.dropdown-content li Link:hover {
+    text-decoration: none;
+  
+
+}
 .fa-caret-down:hover .dropdown-content {
     display: block;
     background-color: black;
     opacity: 0.9;
-    border: 2px solid rgb(214, 184, 127);
+    border: 1px solid rgb(214, 184, 127);
 
 }
 
-.logout-link-dropdown {
+/* .logout-link-dropdown {
+     margin: auto;
     color: white;
     text-decoration: underline;
     font-family: helvetica;
     font-size: 12px;
+     */
 }
 
 .video-fab {

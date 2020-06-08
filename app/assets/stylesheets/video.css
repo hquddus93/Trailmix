@@ -1,0 +1,22 @@
+.video-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: auto;
+    margin: auto;
+    height: 200px;
+    overflow: hidden;
+    margin-left: 0;
+    /* background-color: royalblue; */
+}
+
+.video-row-vid {
+    display: block;
+    margin-left: 10px;
+}
+
+.video-row-vid:hover{
+    margin: 0 40px 0 40px;
+    transform: scale(1.75);
+    z-index: 2;
+}

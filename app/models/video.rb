@@ -5,7 +5,7 @@
 #  id            :bigint           not null, primary key
 #  title         :string           not null
 #  description   :string           not null
-#  rating        :integer          not null
+#  rating        :string           not null
 #  director_name :string           not null
 #  year          :integer          not null
 #  season_id     :integer
@@ -31,6 +31,10 @@ class Video < ApplicationRecord
     class_name: :Season,
     foreign_key: :season_id,
     optional: true
+
+    has_one :show,
+    through: :season,
+    source: :show
 
     has_many :genres,
     class_name: :Genre,

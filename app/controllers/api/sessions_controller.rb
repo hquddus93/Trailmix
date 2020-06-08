@@ -11,7 +11,7 @@ before_action :ensure_logged_in, only: [:destroy]
       render 'api/users/show'
 
     else
-      if email == "" && password = ""
+      if email == "" && password == ""
         render json: ["Please enter an email", "Please enter a password"], status: 401
       elsif password == ""
         render json: ["Please enter a password"], status: 401

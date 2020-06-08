@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import ActionVideos from './action_videos';
 import ThrillerVideos from './thriller_videos';
 import DramaVideos from './drama_videos';
@@ -13,6 +13,7 @@ class VideosIndex extends React.Component {
     constructor(props) {
         super(props);
 
+        this.handleMouseOver = this.handleMouseOver.bind(this)
         this.update = this.update.bind(this)
         this.handleChange = this.handleChange.bind(this);
         this.state={
@@ -32,9 +33,27 @@ class VideosIndex extends React.Component {
     handleChange(e) {
         e.preventDefault();
         this.props.searchVideos(this.state.inputValue);
+        // <Redirect to='/search_results' videos={this.props.searchVideos(this.state.inputValue)}/>
+        this.props.history.push('/search_results')
+    
     }
 
-  
+    handleMouseOver() {
+        return e => {
+            e.target.play()
+            e.className='target-vid'
+          
+        }
+        
+    }
+
+    handleMouseOut(){
+        return e => {
+            e.target.pause()
+            e.className='video-row-vid'
+
+        }
+    }
 
     componentDidMount() {
         this.props.fetchAllVideos()
@@ -81,12 +100,12 @@ class VideosIndex extends React.Component {
                             
                             <li>
                                 <a href='https://github.com/hquddus93'>
-                                    <i className="fab fa-github" id='video-fab'>          Github</i>
+                                    <p>Github</p>
                                 </a>
                             </li>
                             <li>
                                 <a href='https://www.linkedin.com/in/hira-quddus-94963413b/'>
-                                    <i className="fab fa-linkedin"  id='video-fab'>          LinkedIn</i>
+                                    <p>LinkedIn</p>
                                 </a>
                             </li>
                             <li>
@@ -100,22 +119,26 @@ class VideosIndex extends React.Component {
                     <li>
                         <h1>Action</h1>
                         <ActionVideos 
+                        className='video-row'
                         videos={this.props.videos}
                         />
                     </li>
                     <li>
                         <h1>Thriller</h1>
                         <ThrillerVideos
+                            className='video-row'
                             videos={this.props.videos} />
                     </li>
                     <li>
                         <h1>Drama</h1>
                         <DramaVideos
+                            className='video-row'
                             videos={this.props.videos} />
                     </li>
                     <li>
                         <h1>Comedy</h1>
                         <ComedyVideos
+                            handleMouseOver={this.handleMouseOver}
                             videos={this.props.videos} />
                     </li>
                     <li>

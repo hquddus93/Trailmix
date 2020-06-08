@@ -13,8 +13,9 @@ const Splash = (props) => {
         {/* <div class='div'>
         </div> */}
         <div className='main'>
+          <div className='darker-background'>
           <nav className='nav-bar'>
-            <a href="https://trailmix-aa.heroku-app.com.com/#/">
+            <a href="https://trailmix-aa.heroku-app.com.com/#/" className='logo'>
               <img src="https://fontmeme.com/permalink/200604/3150eaf395337ebc34eca4aae8e3c0bf.png" 
               alt="netflix-font" 
               border="0"
@@ -37,7 +38,7 @@ const Splash = (props) => {
                   <DemoContainer />
               </li>
               <li>
-                  <Link to='/login' >
+                  <Link to='/signin' >
                     <button id='signinbtn'>Sign In</button>
                   </Link>
 
@@ -52,7 +53,7 @@ const Splash = (props) => {
             <SignupContainer />
           <p className='signup-text'>Ready to watch? Enter your email to create or restart your membership.</p>
            
-
+        </div>
         </div>
         
 
@@ -89,7 +90,23 @@ const Splash = (props) => {
 
         </div>
 
-
+      <footer className='splash-footer'>
+          <ul className='buttons'>
+          <li id='splash-questions'>Questions?</li>
+            <li>
+              <a href='https://github.com/hquddus93'>
+                <i className="fab fa-github" id='splash-fab'></i>
+              </a>
+            </li>
+            <li>
+              <a href='https://www.linkedin.com/in/hira-quddus-94963413b/'>
+                <i className="fab fa-linkedin" id='splash-fab'></i>
+              </a>
+            </li>
+            </ul>
+        
+        
+      </footer>
 
 
 

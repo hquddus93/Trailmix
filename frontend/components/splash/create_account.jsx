@@ -98,7 +98,7 @@ handlePasswordError() {
                         id='logo' /></a>
                 <div className='buttons'>
                     <DemoContainer />
-                    <Link to='/login' className='signin-btn'>
+                    <Link to='/signin' className='signin-btn'>
                         <button id='signinbtn'>Sign In</button>
                     </Link>
                 </div>

@@ -6,11 +6,11 @@ class Api::VideosController < ApplicationController
         if params[:keyword]
             @videos = []
             videos.each do |video|              
-                if video.title.downcase.include?(params[:keyword].downcase) || video.director_name.downcase.include?(params[:keyword].downcase) || video.genres.any? {|genre| genre.genre.downcase.include?(params[:keyword].downcase)}
+                if video.title.downcase.include?(params[:keyword].downcase) || video.director_name.downcase.include?(params[:keyword].downcase) || video.genres.any? {|genre| genre.genre.downcase.include?(params[:keyword].downcase)} ||  (video.show && video.show.name.downcase.include?(params[:keyword].downcase))
                     @videos << video
-                else 
-                   render json: ['No Search Results Found :('], status: 404
                 end
+            end
+            if @videos.length == 0 then render json: ['No Search Results Found :('], status: 404
             end
       
         else 
