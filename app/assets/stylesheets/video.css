@@ -1,42 +1,62 @@
 .video {
     height: 2000px;
-    width: auto;
+    width: 1300px;
+    overflow: hidden;
+
     background: rgb(14, 11, 11);
 }
 
-.video-row {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    /* width: 700px; */
-    margin: auto;
-    height: 200px;
-    overflow: scroll;
-    /* top: 200px; */
-    /* background-color: royalblue; */
-}
-
 .video-rows {
-    position: relative;
+    position: absolute;
+    width: 1300px;
+    overflow: hidden;
+
     top: 150px;
     left: 10px;
 }
 
-.single-vid {
-    height: 150;
-    width: 250;
-    position: relative;
-
+.video-row {
+    /* position: absolute; */
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    margin: auto;
+    height: 250px;
+    width: 1300px;
+    overflow: scroll;
+    
 }
 
-.video-row-vid {
-    background-color: black;
-    display: block;
-    margin-left: 10px;
-    top: 0;
-    left: 0;
+.single-vid-container {
+    /* background-color: red; */
+    display: flex;
+    justify-content: center;
+    height: 150px;
+    /* flex-wrap: wrap; */
+    /* height: 125px; */
+    width: 240px;
+}
+
+
+
+.single-vid {
+    display: inline-flex;
+    justify-content: center;
+    justify-self: center;
+    margin-left: 30px;
+    /* top: 40px; */
+    /* left: 0; */
     z-index: 1;
 }
+
+.single-vid:hover{
+    transform: scale(1.75);
+    position: relative;
+    top: 40px;
+    margin: 0 40px 0 40px;
+    z-index: 2;
+}
+
 
 #hidden {
     display: none;
@@ -63,17 +83,13 @@
 
 
 
-.video-row-vid:hover{
-    margin: 0 40px 0 40px;
-    transform: scale(1.75);
-    z-index: 2;
-}
+
 
 .video h1 {
     color: white;
     font-family: Helvetica;
     font-size: 16px;
-}
+} 
 
 /* .video ul li {
     margin-top: 30px;

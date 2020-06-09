@@ -1,12 +1,13 @@
- .videos-nav {
+ .search-nav {
       display: flex;
       flex-direction: row;
       align-items: center;
       width: auto;
       position: fixed;
-      z-index: 4;
       top: 0; 
       width: 98%;
+    background: rgb(14, 11, 11);
+
  }
 
  .videos-page-links {
@@ -61,7 +62,12 @@
     text-decoration: none;
     display: block;
 }
-
+/* .dropdown-content li:hover {
+    background-color: rgb(32, 30, 30);
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+} */
 
 .dropdown-content li a {
     color: White;
@@ -98,7 +104,14 @@
 
 }
 
-
+/* .logout-link-dropdown {
+     margin: auto;
+    color: white;
+    text-decoration: underline;
+    font-family: helvetica;
+    font-size: 12px;
+     */
+}
 
 .video-fab {
     color: white;
