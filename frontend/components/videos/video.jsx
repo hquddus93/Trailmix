@@ -13,14 +13,14 @@ class VideosIndex extends React.Component {
     constructor(props) {
         super(props);
 
-        this.handleMouseOver = this.handleMouseOver.bind(this)
-        this.update = this.update.bind(this)
+        // this.handleMouseOver = this.handleMouseOver.bind(this)
+        // this.update = this.update.bind(this)
         this.handleChange = this.handleChange.bind(this);
         this.state={
             inputValue: ''
         }
 
-        // this.handleSubmit = this.handleSubmit.bind(this)
+       
     }
 
     update(field) {
@@ -33,19 +33,23 @@ class VideosIndex extends React.Component {
     handleChange(e) {
         e.preventDefault();
         this.props.searchVideos(this.state.inputValue);
-        // <Redirect to='/search_results' videos={this.props.searchVideos(this.state.inputValue)}/>
         this.props.history.push('/search_results')
     
     }
 
-    handleMouseOver() {
-        return e => {
-            e.target.play()
-            e.className='target-vid'
+    // handleMouseOver(e) {
+
+    //     // document.getElementById('hidden').className='vid-text';
+    
+    //     //     // console.log(e.target)
+    //     //     e.target.play()
+
+    //         // e.className='target-vid'
+
           
-        }
+    //     }
         
-    }
+    // }
 
     handleMouseOut(){
         return e => {
@@ -65,10 +69,7 @@ class VideosIndex extends React.Component {
         if (this.props.videos === undefined) {
             return <> </>
         } 
-        // else if (this.state.inputValue.length > 0) {
-        
-        //     return this.handleSubmit();
-        // }
+     
         else {
         
         return (
@@ -108,6 +109,7 @@ class VideosIndex extends React.Component {
                                     <p>LinkedIn</p>
                                 </a>
                             </li>
+
                             <li>
                                 <Link to='/' onClick={this.props.logout} id='logout-link-dropdown'>Logout</Link>
                             </li>
@@ -115,12 +117,13 @@ class VideosIndex extends React.Component {
                         </i> 
                     </div>
                 </nav>
-                <ul>
+                <ul className='video-rows'>
                     <li>
                         <h1>Action</h1>
                         <ActionVideos 
                         className='video-row'
                         videos={this.props.videos}
+                        
                         />
                     </li>
                     <li>

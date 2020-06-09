@@ -10,7 +10,7 @@ class Api::VideosController < ApplicationController
                     @videos << video
                 end
             end
-            if @videos.length == 0 then render json: ['No Search Results Found :('], status: 404
+                if @videos.length == 0 then render json: ['No Search Results Found :('], status: 404
             end
       
         else 

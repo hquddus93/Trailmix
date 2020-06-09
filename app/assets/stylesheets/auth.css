@@ -93,6 +93,27 @@ nav h1{
     cursor: pointer;
  }
 
+ .signin-link {
+    text-decoration: none;
+    color: black;
+    font-family: Helvetica;
+    font-size: 16px;
+    font-weight: bold
+ }
+
+  .signin-link:hover {
+    text-decoration: underline;
+   
+ }
+
+ .ca-buttons {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    width: 200px;
+    justify-content: space-around;
+ }
+
   .demo-btn {
    background-color: #E50914;
    color: white;
@@ -448,14 +469,6 @@ nav h1{
 
  }
 
-
-
- .video h1 {
-    color: teal;
-    text-align: center;
-    margin-top: 200px;
-    font-size: 72px;
- }
 
  #errors {
    font-size: 14px;
