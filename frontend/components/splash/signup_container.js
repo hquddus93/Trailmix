@@ -6,7 +6,6 @@ import SignupForm from './signup';
 
 const mapStateToProps = state => ({
     errors: Object.values(state.errors.session),
-    // navLink: <Link to="/login">log in instead</Link>,
     form: {
         email: '',
         password: '',

@@ -1,9 +1,7 @@
  .videos-nav {
       display: flex;
-      /* justify-content: space-between; */
       flex-direction: row;
       align-items: center;
-      /* justify-content: space-between; */
       width: auto;
       position: fixed;
       top: 0; 
@@ -15,7 +13,9 @@
     justify-content: space-between;
     align-items: center;
     width: 300px;
- }
+    color: white;
+    font-family: Helvetica;
+}
 
  .videos-page-links li {
     list-style: none;
@@ -33,7 +33,7 @@
 
  .fa-caret-down {
     /* background-color: #4CAF50; */
-    color: black;
+    color: white;
     padding: 16px;
     font-size: 16px;
     border: none;

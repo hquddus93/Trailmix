@@ -14,8 +14,11 @@ const Family = (props) => {
                     if (video.genres.includes("Family")) {
                         return (
 
-                            <video key={video.id} className='video-row-vid' autoplay={true} src={video.videoUrl} height='150' width='250' onMouseOver={event => event.target.play()}
-                                onMouseOut={event => event.target.pause()}></video>
+                            <div className='single-vid'>
+                                <video key={video.id} className='video-row-vid' autoplay={true} src={video.videoUrl} height='150' width='250' onMouseOver={event => event.target.play()}
+                                    onMouseOut={event => event.target.pause()}></video>
+                                <div className='vid-text'>{video.title}</div>
+                            </div>
                         )
                 
                     }

@@ -1,22 +1,81 @@
+.video {
+    height: 2000px;
+    width: auto;
+    background: rgb(14, 11, 11);
+}
+
 .video-row {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    width: auto;
+    /* width: 700px; */
     margin: auto;
     height: 200px;
-    overflow: hidden;
-    margin-left: 0;
+    overflow: scroll;
+    /* top: 200px; */
     /* background-color: royalblue; */
 }
 
+.video-rows {
+    position: relative;
+    top: 150px;
+    left: 10px;
+}
+
+.single-vid {
+    height: 150;
+    width: 250;
+    position: relative;
+
+}
+
 .video-row-vid {
+    background-color: black;
     display: block;
     margin-left: 10px;
+    top: 0;
+    left: 0;
+    z-index: 1;
 }
+
+#hidden {
+    display: none;
+}
+
+.vid-text {
+    font-family: Helvetica;
+    opacity: 0.9;
+    top: 90px; 
+    left: 20px; 
+    color: white;
+    position: absolute;
+    z-index: 2;
+}
+
+.vid-text h3 {
+    font-size: 18px;
+}
+
+.vid-text h4 {
+    font-size: 14px;
+}
+
+
+
 
 .video-row-vid:hover{
     margin: 0 40px 0 40px;
     transform: scale(1.75);
     z-index: 2;
 }
+
+.video h1 {
+    color: white;
+    font-family: Helvetica;
+    font-size: 16px;
+}
+
+/* .video ul li {
+    margin-top: 30px;
+} */
+
