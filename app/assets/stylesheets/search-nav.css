@@ -1,12 +1,13 @@
- .videos-nav {
+ .search-nav {
       display: flex;
       flex-direction: row;
       align-items: center;
       width: auto;
       position: fixed;
-      z-index: 4;
       top: 0; 
       width: 98%;
+    background: rgb(14, 11, 11);
+
  }
 
  .videos-page-links {
@@ -103,7 +104,14 @@
 
 }
 
-
+/* .logout-link-dropdown {
+     margin: auto;
+    color: white;
+    text-decoration: underline;
+    font-family: helvetica;
+    font-size: 12px;
+     */
+}
 
 .video-fab {
     color: white;

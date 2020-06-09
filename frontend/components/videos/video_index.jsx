@@ -1,20 +1,16 @@
 import React from 'react';
 import { Link, Redirect } from 'react-router-dom';
-import ActionVideos from './action_videos';
-import ThrillerVideos from './thriller_videos';
-import DramaVideos from './drama_videos';
-import ComedyVideos from './comedy_videos';
-import FamilyVideos from './family_videos';
-import Search from './search';
+import SearchContainer from './search_container';
+import VideoRowContainer from './video_row_container';
 
 
 
-class VideosIndex extends React.Component {
+class VideoIndex extends React.Component {
     constructor(props) {
         super(props);
 
-        // this.handleMouseOver = this.handleMouseOver.bind(this)
-        // this.update = this.update.bind(this)
+
+        this.handleMouseOver = this.handleMouseOver.bind(this)
         this.handleChange = this.handleChange.bind(this);
         this.state={
             inputValue: ''
@@ -37,19 +33,26 @@ class VideosIndex extends React.Component {
     
     }
 
-    // handleMouseOver(e) {
+    handleMouseOver(e) {
+        e.persist();
+        // e.stopPropogation();
 
-    //     // document.getElementById('hidden').className='vid-text';
-    
-    //     //     // console.log(e.target)
-    //     //     e.target.play()
+        // document.getElementById('hidden').className='vid-text';
+        // 
+            // console.log(e.target)
+            e.target.play()
 
-    //         // e.className='target-vid'
+            // e.className='target-vid'
 
           
-    //     }
         
-    // }
+        
+    }
+
+    handleClick(e) {
+        this.props.history.push(`/show/${e.target.id}`)
+
+    }
 
     handleMouseOut(){
         return e => {
@@ -88,11 +91,7 @@ class VideosIndex extends React.Component {
                         <p>MyList</p>
                     </ul>
 
-                    <Search
-                        videos={this.props.videos}
-                        inputValue={this.state.inputValue}
-                        update={this.update}
-                        handleChange={this.handleChange}/>
+                    <SearchContainer />
 
                     <div className='dropdown'>
                         <i className="fas fa-caret-down">
@@ -117,40 +116,18 @@ class VideosIndex extends React.Component {
                         </i> 
                     </div>
                 </nav>
+                <div>
                 <ul className='video-rows'>
-                    <li>
-                        <h1>Action</h1>
-                        <ActionVideos 
-                        className='video-row'
-                        videos={this.props.videos}
-                        
-                        />
-                    </li>
-                    <li>
-                        <h1>Thriller</h1>
-                        <ThrillerVideos
-                            className='video-row'
-                            videos={this.props.videos} />
-                    </li>
-                    <li>
-                        <h1>Drama</h1>
-                        <DramaVideos
-                            className='video-row'
-                            videos={this.props.videos} />
-                    </li>
-                    <li>
-                        <h1>Comedy</h1>
-                        <ComedyVideos
-                            handleMouseOver={this.handleMouseOver}
-                            videos={this.props.videos} />
-                    </li>
-                    <li>
-                        <h1>Family</h1>
-                        <FamilyVideos
-                            videos={this.props.videos} />
-                    </li>
+                    {["Action", "Comedy", "Family", "Thriller", "Drama"].map(genre => (
+                        <div>
+                            <h1>{genre}</h1>
+                            <VideoRowContainer
+                                className='video-row'/>
+                        </div>
+
+                    ))}
                 </ul>
-               
+               </div>
                 
             </div>
         )
@@ -159,4 +136,4 @@ class VideosIndex extends React.Component {
 }
 
 
-export default VideosIndex;
+export default VideoIndex;

@@ -1,9 +1,11 @@
 import { connect } from 'react-redux';
 import { logout } from '../../actions/session';
 
+import { withRouter } from 'react-router';
+
 import { fetchAllVideos, searchVideos } from '../../actions/video'
-import VideosIndex from './video';
-import { render } from 'react-dom';
+import Search from './search';
+
 
 
 
@@ -17,4 +19,4 @@ const mDTP = dispatch => ({
     searchVideos: (keyword) => dispatch(searchVideos(keyword))
 });
 
-export default connect(mSTP, mDTP)(VideosIndex)
+export default withRouter(connect(mSTP, mDTP)(Search));

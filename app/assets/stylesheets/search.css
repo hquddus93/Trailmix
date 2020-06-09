@@ -144,3 +144,42 @@ input {
   -ms-transform: translate(-100%, -50%);
   transform: translate(-100%, -50%);
 } */
+
+.search-result-videos {
+  /* position: absolute; */
+  padding-top: 200px;
+  background: rgb(14, 11, 11);
+  width: auto;
+  height: 2000px;
+
+  /* background-color: rgb(14, 11, 11); */
+  
+  /* display: grid; */
+}
+
+.search-result-videos h1 {
+  color: white;
+  font-family: Helvetica;
+  font-size: 20px;
+  padding-left: 25px;
+}
+
+
+.search-videos {
+  display: inline-block;
+  /* width: auto; */
+  width: 1200px;
+  height: 1000px;
+  /* flex-direction: column; */
+  justify-content: space-between;
+  background: rgb(14, 11, 11);
+
+  
+}
+
+.search-videos video {
+  margin-left: 20px;
+  margin-top: 10px;
+  background-color: black;
+}
+
