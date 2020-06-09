@@ -1,14 +1,7 @@
  .videos-nav {
       display: flex;
-<<<<<<< HEAD
-    
       flex-direction: row;
       align-items: center;
-      
-=======
-      flex-direction: row;
-      align-items: center;
->>>>>>> videos
       width: auto;
       position: fixed;
       top: 0; 
