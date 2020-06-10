@@ -1,58 +1,59 @@
 .video {
     height: 2000px;
     width: 1300px;
-    overflow: hidden;
+    /* overflow: hidden; */
 
     background: rgb(14, 11, 11);
 }
 
 .video-rows {
-    position: absolute;
+    position: relative;
     width: 1300px;
-    overflow: hidden;
-
+    display: flex;
+    flex-direction: column;
     top: 150px;
     left: 10px;
+    /* overflow: hidden; */
 }
 
 .video-row {
     /* position: absolute; */
+    /* display: inline-block; */
     display: flex;
     flex-direction: row;
     justify-content: left;
-    margin: auto;
+    /* margin: auto; */
     height: 250px;
     width: 1300px;
-    overflow: scroll;
-    
+    /* overflow: hidden;  */
 }
 
-.single-vid-container {
-    /* background-color: red; */
-    display: flex;
+/* .single-vid-container {
+    
+    display: inline-block;
+    flex-direction: row;
     justify-content: center;
-    height: 150px;
-    /* flex-wrap: wrap; */
-    /* height: 125px; */
-    width: 240px;
-}
+    /* height: 150px; */
+    /* margin-right: 10px; */
+    /* width: 240px; */
+    /* overflow: hidden; */
+
 
 
 
 .single-vid {
-    display: inline-flex;
+    display: inline-block;
     justify-content: center;
     justify-self: center;
     margin-left: 30px;
-    /* top: 40px; */
-    /* left: 0; */
+    position: relative;
     z-index: 1;
 }
 
 .single-vid:hover{
     transform: scale(1.75);
     position: relative;
-    top: 40px;
+    top: 20px;
     margin: 0 40px 0 40px;
     z-index: 2;
 }
@@ -65,20 +66,21 @@
 .vid-text {
     font-family: Helvetica;
     opacity: 0.9;
-    top: 90px; 
+    top: 70px; 
     left: 20px; 
     color: white;
     position: absolute;
-    z-index: 2;
+    /* z-index: 5; */
 }
 
 .vid-text h3 {
-    font-size: 18px;
+    font-size: 16px;
 }
 
 .vid-text h4 {
-    font-size: 14px;
+    font-size: 12px;
 }
+
 
 
 
@@ -89,7 +91,11 @@
     color: white;
     font-family: Helvetica;
     font-size: 16px;
-} 
+}  
+
+.list-btn {
+    font-size: 15px;
+}
 
 /* .video ul li {
     margin-top: 30px;

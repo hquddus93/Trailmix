@@ -30,7 +30,7 @@ class SearchResults extends React.Component {
     handleChange(e) {
         // e.preventDefault();
         this.setState({videos: this.props.searchVideos(this.state.inputValue)});
-        debugger
+       
         // <Redirect to='/search_results' videos={this.props.searchVideos(this.state.inputValue)} />
         this.props.history.push('/search_results')
 
@@ -40,7 +40,7 @@ class SearchResults extends React.Component {
 
     componentDidMount() {
         // this.props.fetchAllVideos()
-        debugger
+        
         this.props.searchVideos(this.state.videos)
     }
 

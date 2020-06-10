@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, Redirect } from 'react-router-dom';
 import SearchContainer from './search_container';
-import VideoRowContainer from './video_row_container';
+import VideoRowContainer from './video_row';
 
 
 
@@ -35,17 +35,18 @@ class VideoIndex extends React.Component {
 
     handleMouseOver(e) {
         e.persist();
-        // e.stopPropogation();
+        
+    //   debugger
+            e.target.play();
+            this.videoId = parseInt(e.target.id)
+            this.props.history.push(`/videos/${e.target.id}`)
 
-        // document.getElementById('hidden').className='vid-text';
-        // 
-            // console.log(e.target)
-            e.target.play()
+        //    return <List videoId={e.target.id}/>
 
             // e.className='target-vid'
 
           
-        
+   
         
     }
 
@@ -116,17 +117,18 @@ class VideoIndex extends React.Component {
                         </i> 
                     </div>
                 </nav>
-                <div>
-                <ul className='video-rows'>
+                <div className='video-rows'>
                     {["Action", "Comedy", "Family", "Thriller", "Drama"].map(genre => (
-                        <div>
+                        <div className='video-row'>
                             <h1>{genre}</h1>
-                            <VideoRowContainer
-                                className='video-row'/>
+                            <VideoRowContainer 
+                                videos={this.props.videos}
+                                genre={genre}
+                                handleMouseOver={this.handleMouseOver}
+                                videoId={this.videoId}/>
                         </div>
 
                     ))}
-                </ul>
                </div>
                 
             </div>

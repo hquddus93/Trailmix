@@ -10,10 +10,10 @@ class GenreIndex extends React.Component {
     }
 
     componentDidMount() {
-        debugger
+       
         this.props.fetchAllVideos();
-        this.props.fetchGenres();
-        debugger
+        // this.props.fetchGenres();
+        
     }
 
     render() {

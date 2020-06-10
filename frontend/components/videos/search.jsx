@@ -5,7 +5,7 @@ class Search extends React.Component {
     constructor(props){
         super(props);
 
-        debugger
+      
         this.update = this.update.bind(this)
         this.handleChange = this.handleChange.bind(this);
         this.state = {
@@ -25,9 +25,9 @@ class Search extends React.Component {
         // e.preventDefault();
         this.setState({ videos: this.props.searchVideos(this.state.inputValue) });
         // <Redirect to='/search_results' videos={this.props.searchVideos(this.state.inputValue)} />
-        debugger
+        
         this.props.history.push('/search_results')
-        debugger
+      
 
     }
 

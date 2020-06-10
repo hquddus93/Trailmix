@@ -1,2 +1,4 @@
+json.partial! 'api/lists/vid', list: @list
+ 
 
-json.listVideoIds @list.video.pluck(:id)
+

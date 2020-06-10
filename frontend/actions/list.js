@@ -7,6 +7,7 @@ export const LIST_ERROR = 'LIST_ERROR';
 const receiveListVideo = (video) => ({
     type: ADD_TO_LIST,
     video
+   
 });
 
 
@@ -28,5 +29,5 @@ export const addToList = (video) => dispatch => (ApiListUtil.addToList(video))
 
 export const deleteFromList = (videoId) => dispatch => (ApiListUtil.deleteFromList(videoId))
 .then(() => dispatch(deleteListVideo(videoId)))
-.fail(err => dispatch(receiveListError(err)))
+// .fail(err => dispatch(receiveListError(err)))
 
