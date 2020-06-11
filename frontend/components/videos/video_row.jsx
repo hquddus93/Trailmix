@@ -62,14 +62,16 @@ const VideoRow = props => {
         props.videos.map(video => {
             if (video.genres.includes(props.genre)) {
                 return (
-                    <div className='single-vid' >
-                    <video key={video.id} id={video.id} autoplay={false} src={video.videoUrl} height='150' width='250' onMouseOver={props.handleMouseOver}
-                            onMouseOut={event => event.target.pause()} >{video.title} </video>
-                        <div id={`vid-text-${video.id}`} className='vid-text'>
-                            <h3>{video.title}</h3>
-                            <h4>{video.rating}</h4>
-                            <h4>{video.genres}</h4>
-                            <List videoId={video.id}/>
+                    <div className='single-vid-container'>
+                        <div className='single-vid' >
+                        <video key={video.id} id={video.id} autoplay={false} src={video.videoUrl} poster={video.photoUrl} height='150' width='250' onMouseOver={props.handleMouseOver}
+                                onMouseOut={event => event.target.pause()} >{video.title} </video>
+                            <div id={`vid-text-${video.id}`} className='vid-text'>
+                                <h3>{video.title}</h3>
+                                <h4>{video.rating}</h4>
+                                <h4>{video.genres}</h4>
+                                <List videoId={video.id}/>
+                            </div>
                         </div>
                        
                     </div>

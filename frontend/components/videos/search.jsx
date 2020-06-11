@@ -9,12 +9,13 @@ class Search extends React.Component {
         this.update = this.update.bind(this)
         this.handleChange = this.handleChange.bind(this);
         this.state = {
-            inputValue: ''
+            inputValue: "", videos: ""
             // videos: this.props.videos
         }
     }
 
     update(field) {
+
         return e => (
             this.setState({ [field]: e.target.value })
         )
@@ -22,10 +23,14 @@ class Search extends React.Component {
 
 
     handleChange(e) {
-        // e.preventDefault();
+        e.preventDefault();
         this.setState({ videos: this.props.searchVideos(this.state.inputValue) });
+        debugger
+        this.props.searchVideos(this.state.inputValue)
+
+        debugger
         // <Redirect to='/search_results' videos={this.props.searchVideos(this.state.inputValue)} />
-        
+     
         this.props.history.push('/search_results')
       
 
@@ -33,16 +38,18 @@ class Search extends React.Component {
 
 
 
-    componentDidMount() {
-        // this.props.fetchAllVideos()
-        // this.state.inputValue
-        this.props.searchVideos(this.state.videos)
-    }
+    // componentDidMount() {
+    //     debugger
+    //     this.props.searchVideos(this.state.inputValue)
+    // }
 
 
     
     render() {
-        // console.log(this.props)
+        // console.log(this.this.props)
+        // if (this.state.inputValue === "") {
+        //     return <></>
+        // } else {
         return(
             <form onSubmit={this.handleChange} id="content">
                 {/* <div className="searchbar">
@@ -63,6 +70,7 @@ class Search extends React.Component {
             </form>
             )
         }
+    // }
 };
 
 export default Search;

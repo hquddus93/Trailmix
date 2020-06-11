@@ -18,6 +18,7 @@ class Video < ApplicationRecord
 
 
     has_one_attached :url
+    has_one_attached :photo
     
     has_many :previous_views,
     class_name: :PreviousView,

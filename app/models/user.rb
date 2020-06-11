@@ -19,7 +19,7 @@ class User < ApplicationRecord
     attr_reader :password
     after_initialize :ensure_session_token
 
-    has_many :list,
+    has_one :mylist,
     foreign_key: :user_id,
     class_name: :List
 
@@ -32,7 +32,7 @@ class User < ApplicationRecord
     source: :video
 
     has_many :videos_on_list,
-    through: :list,
+    through: :mylist,
     source: :video
 
     def password=(password)

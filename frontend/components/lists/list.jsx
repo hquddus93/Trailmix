@@ -4,7 +4,9 @@ class List extends React.Component {
     constructor(props){
         super(props);
      
-        this.buttonText = currentUser.myListVideoIds.includes(this.props.videoId) ? "x" : "+";
+        let buttonText = this.props.currentUser.myListVideoIds.includes(this.props.videoId) ? <i class="fa fa-check-circle" ></i> : <i class="fa fa-plus-circle" aria-hidden="true"></i>;
+        
+        this.state = {buttonText: buttonText}
 
         // this.handleClick = this.handleClick.bind(this);
     }
@@ -14,16 +16,15 @@ handleClick() {
     // e.preventDefault();
     let {videoId} = this.props;
 
-    if (this.props.list[videoId]) {
-        if (currentUser.myListVideoIds.includes(videoId)) {
-            
-            currentUser.myListVideoIds = currentUser.myListVideoIds.filter( id => id !== videoId);
-          
-        }
-    this.props.deleteFromList(videoId) 
-       
+    if (this.props.currentUser.myListVideoIds.includes(videoId)) {
+        debugger
+     this.props.deleteFromList(videoId, this.props.currentUser)  
+        this.setState({ buttonText: <i class="fa fa-plus-circle" aria-hidden="true"></i>})
+        
     } else {
-        this.props.addToList(this.props.videos[videoId]);
+        debugger
+        this.props.addToList(this.props.videos[videoId], this.props.currentUser);
+        this.setState({ buttonText: <i class="fa fa-check-circle" ></i> })
        
     };
     
@@ -31,8 +32,11 @@ handleClick() {
 }
 
     render() {
+        
+        // this.buttonText = this.props.currentUser[currentUser.id].myListVideoIds.includes(this.props.videoId) ? "x" : "+";
 
-        if (!currentUser) {
+        
+        if (!this.props.currentUser) {
             return <></>
         } else {
             
@@ -40,7 +44,7 @@ handleClick() {
                 // <button onClick={() => this.handleClick()}>test</button>
                 
                 /* {buttonText = this.props.list.listVideoIds.values.includes(this.props.match.params.videoId ? "-" : "+")} */
-            <button className='list-btn' onClick={() => this.handleClick()}> {this.buttonText} </button>
+            <button className='list-btn' onClick={() => this.handleClick()}> {this.state.buttonText} </button>
             
                 )
         }

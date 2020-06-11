@@ -2,6 +2,7 @@ import React from 'react';
 import { Link, Redirect } from 'react-router-dom';
 import SearchContainer from './search_container';
 import VideoRowContainer from './video_row';
+import BackgroundVideo from './backgroundvideo';
 
 
 
@@ -10,28 +11,35 @@ class VideoIndex extends React.Component {
         super(props);
 
 
+        // this.update = this.update.bind(this);
         this.handleMouseOver = this.handleMouseOver.bind(this)
-        this.handleChange = this.handleChange.bind(this);
+        // this.handleChange = this.handleChange.bind(this);
         this.state={
             inputValue: ''
         }
 
        
     }
-
-    update(field) {
-        return e => (
-            this.setState({[field]: e.target.value})
-        )
-    }
-
-
-    handleChange(e) {
-        e.preventDefault();
-        this.props.searchVideos(this.state.inputValue);
-        this.props.history.push('/search_results')
     
-    }
+
+
+
+    // update(field) {
+    //     debugger
+    //     return e => (
+    //         this.setState({[field]: e.target.value})
+    //     )
+    
+    // }
+
+
+    // handleChange(e) {
+    //     debugger
+    //     e.preventDefault();
+    //     this.props.searchVideos(this.state.inputValue);
+    //     this.props.history.push('/search_results')
+    
+    // }
 
     handleMouseOver(e) {
         e.persist();
@@ -50,10 +58,10 @@ class VideoIndex extends React.Component {
         
     }
 
-    handleClick(e) {
-        this.props.history.push(`/show/${e.target.id}`)
+    // handleClick(e) {
+    //     this.props.history.push(`/show/${e.target.id}`)
 
-    }
+    // }
 
     handleMouseOut(){
         return e => {
@@ -86,10 +94,10 @@ class VideoIndex extends React.Component {
                             id='logo' /></a>
 
                     <ul className='videos-page-links'>
-                        <p>Home</p>
-                        <p>TV Shows</p>
-                        <p>Movies</p>
-                        <p>MyList</p>
+                        <Link to='/videos'>Home</Link>
+                        <Link to='/tv_shows'>TV Shows</Link>
+                        <Link to='/movies'>Movies</Link>
+                        <Link to='/my_list'>MyList</Link>
                     </ul>
 
                     <SearchContainer />
@@ -117,17 +125,21 @@ class VideoIndex extends React.Component {
                         </i> 
                     </div>
                 </nav>
+
+                <BackgroundVideo />
                 <div className='video-rows'>
                     {["Action", "Comedy", "Family", "Thriller", "Drama"].map(genre => (
-                        <div className='video-row'>
+                        <div className='vid-catgeory'>   
                             <h1>{genre}</h1>
-                            <VideoRowContainer 
-                                videos={this.props.videos}
-                                genre={genre}
-                                handleMouseOver={this.handleMouseOver}
-                                videoId={this.videoId}/>
+                            <div className='video-row'>
+                                <VideoRowContainer 
+                                    videos={this.props.videos}
+                                    genre={genre}
+                                    handleMouseOver={this.handleMouseOver}
+                                    videoId={this.videoId}
+                                    />
+                            </div>
                         </div>
-
                     ))}
                </div>
                 

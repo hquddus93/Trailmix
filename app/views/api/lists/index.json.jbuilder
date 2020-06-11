@@ -1,4 +1,4 @@
-json.partial! 'api/lists/vid', list: @list
+json.partial! 'api/lists/vid', list: @mylist
  
 
 

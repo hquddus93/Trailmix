@@ -10,6 +10,9 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
+<script type="text/javascript">
+  window.backgroundVid = "<%= video_url('blackpanther.mp4')%>"
+</script>
 
   <body>
     <%= yield %>

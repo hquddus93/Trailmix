@@ -5,14 +5,15 @@ import {addToList, deleteFromList} from '../../actions/list';
 
 const mSTP = (state, ownProps) => ({
     list: state.entities.list,
-    videos: state.entities.videos
+    videos: state.entities.videos,
+    currentUser: state.entities.users[state.session.id]
     // video: state.entities.videos[ownProps.match.params.videoId]
 
 });
 
 const mDTP = dispatch => ({
-    addToList: (video) => dispatch(addToList(video)),
-    deleteFromList: (videoId) => dispatch(deleteFromList(videoId))
+    addToList: (video, currentUser) => dispatch(addToList(video, currentUser)),
+    deleteFromList: (videoId, currentUser) => dispatch(deleteFromList(videoId, currentUser))
 
 });
 

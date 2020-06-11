@@ -1,8 +1,10 @@
 class Api::ListsController < ApplicationController
     def create
-       list = List.new(user_id: current_user.id, video_id: params[:video][:id]) 
-        if list.save && !current_user.list.include?(list)
-            @list = list
+       listing = List.new(user_id: current_user.id, video_id: params[:video][:id]) 
+    #    debugger
+        if listing.save 
+            # debugger
+            @mylist = listing
             render '/api/lists/index'
         else
             render json: ['Video does not exist :('], status: 404
@@ -10,24 +12,32 @@ class Api::ListsController < ApplicationController
     end
 
     def index
-        @list = current_user.list
+        @mylist = current_user.mylist
     end
 
     def destroy
     
-        @list = current_user.list.uniq!
+        # @mylist = current_user.videos_on_list
+        # @mylist.uniq!
+        @myList = List.find_by(user_id: current_user.id, video_id: params[:video_id])
+        # debugger
+        @myList.destroy
         
-        if @list 
-            @list.each_with_index do |list_item, idx|
-            
-                if list_item.video_id == params[:video_id]
-                    @list.delete_at(idx)
-                end
-            end
-        else
-            render json: ['Video does not exist on your list :('], status: 404
-        end
-        head :no_content
+        # if @mylist 
+        #     @mylist.each_with_index do |list_item, idx|
+        #         debugger
+        #         if list_item.id == params[:video_id]
+        #             debugger
+        #             # @mylist.delete(list_item)
+        #             @mylist[idx] = ""
+        #         end
+        #     end
+        #     @mylist
+        #     debugger
+        #     render  json: '/api/lists/index'
+
+        
+        # head :no_content
         # render  json: '/api/lists/index'
     end
 end

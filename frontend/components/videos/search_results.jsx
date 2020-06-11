@@ -9,42 +9,27 @@ import SearchContainer from './search_container';
 class SearchResults extends React.Component {
     constructor(props) {
         super(props);
+      
 
-        this.update = this.update.bind(this)
-        this.handleChange = this.handleChange.bind(this);
+   
         this.state = {
-            inputValue: '',
-            // videos: this.props.videos
+            inputValue: this.props.inputValue,
+
         }
 
    
     }
 
-    update(field) {
-        return e => (
-            this.setState({ [field]: e.target.value })
-        )
-    }
-
-
-    handleChange(e) {
-        // e.preventDefault();
-        this.setState({videos: this.props.searchVideos(this.state.inputValue)});
-       
-        // <Redirect to='/search_results' videos={this.props.searchVideos(this.state.inputValue)} />
-        this.props.history.push('/search_results')
-
-    }
-
 
 
     componentDidMount() {
-        // this.props.fetchAllVideos()
-        
-        this.props.searchVideos(this.state.videos)
+        if (this.state.inputValue) {
+            this.props.searchVideos(this.state.inputValue)
+        }
     }
 
     render() {
+
         return (
             <div className='search-results-page'>
                 <nav className='search-nav'>
@@ -55,17 +40,14 @@ class SearchResults extends React.Component {
                             id='logo' /></a>
 
                     <ul className='videos-page-links'>
-                        <p>Home</p>
-                        <p>TV Shows</p>
-                        <p>Movies</p>
-                        <p>MyList</p>
+                        <Link to='/videos'>Home</Link>
+                        <Link to='/tv_shows'>TV Shows</Link>
+                        <Link to='/movies'>Movies</Link>
+                        <Link to='my_list'>MyList</Link>
                     </ul>
 
                     <SearchContainer
-                        videos={this.props.videos}
-                        inputValue={this.state.inputValue}
-                        update={this.update}
-                        handleChange={this.handleChange} />
+                        />
                         {/* /> */}
 
                     <div className='dropdown'>
@@ -94,7 +76,7 @@ class SearchResults extends React.Component {
                     <h1>Search Results</h1>
                     <ul className='search-videos'>
                         {this.props.videos.map(video => (
-                            <video key={video.id} autoplay={true} src={video.videoUrl} height='150' width='250'>
+                            <video key={video.id} autoplay={true} poster={video.photoUrl} src={video.videoUrl} height='150' width='250'>
                                 
                             </video> 
                             ))}
