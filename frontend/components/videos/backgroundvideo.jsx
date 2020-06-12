@@ -5,18 +5,18 @@ class BackgroundVideo extends React.Component{
     constructor(props){
         super(props);
 
-        this.state = { muted: true, buttonText: <i class="fa fa-volume-off" aria-hidden="true"></i>}
+        this.state = { muted: true, buttonText: <i className="fa fa-volume-off" aria-hidden="true"></i>}
     }
 
 
     toggleMute() {
         let vid = document.getElementById("mainvid")
         if (this.state.muted) {
-            this.setState({ muted: false, buttonText: <i class="fa fa-volume-up" aria-hidden="true"></i> });
+            this.setState({ muted: false, buttonText: <i className="fa fa-volume-up" aria-hidden="true"></i> });
             vid.muted = false;
         }
         else {
-            this.setState({ muted: true, buttonText: <i class="fa fa-volume-off" aria-hidden="true"></i> });
+            this.setState({ muted: true, buttonText: <i className="fa fa-volume-off" aria-hidden="true"></i> });
             vid.muted = true;
         }
     }

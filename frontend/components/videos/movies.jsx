@@ -33,7 +33,7 @@ class Movies extends React.Component{
     handleMouseOver(e) {
         e.persist();
 
-        //   debugger
+ 
         e.target.play();
         this.videoId = parseInt(e.target.id)
         this.props.history.push(`/videos/${e.target.id}`)
@@ -97,7 +97,7 @@ class Movies extends React.Component{
                                 if (!video.season_id) {
                                 return  (
                                 <div className='single-vid-container-movie'>
-                                    <video key={video.id} id={video.id} autoplay={false} src={video.videoUrl} poster={video.photoUrl} height='150' width='250' onMouseOver={event => event.target.play()}
+                                    <video key={video.id} id={video.id} autoPlay={false} src={video.videoUrl} poster={video.photoUrl} height='150' width='250' onMouseOver={event => event.target.play()}
                                         onMouseOut={event => event.target.pause()} 
                                         onClick={this.handleClick}></video>
                                 </div>

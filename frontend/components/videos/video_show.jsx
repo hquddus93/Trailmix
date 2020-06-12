@@ -13,7 +13,7 @@ class VideoShow extends React.Component {
     render(){
         const {video} = this.props;
         return(
-            <video src={video.video_url} autoplay={true} fullscreen={true}></video>
+            <video src={video.video_url} autoPlay={true} fullscreen={true}></video>
         )
 
 

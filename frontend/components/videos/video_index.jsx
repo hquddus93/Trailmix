@@ -24,40 +24,21 @@ class VideoIndex extends React.Component {
        
     }
     
-
-
-
-    // update(field) {
-    //     debugger
-    //     return e => (
-    //         this.setState({[field]: e.target.value})
-    //     )
-    
-    // }
-
-
-    // handleChange(e) {
-    //     debugger
-    //     e.preventDefault();
-    //     this.props.searchVideos(this.state.inputValue);
-    //     this.props.history.push('/search_results')
-    
-    // }
+  
 
     handleClick(e) {
      
-        // this.props.history.pop(`/play/${e.target.id}`)
+
         this.props.history.push(`/play/${e.target.id}`)
      
-        debugger
-        
+
         return <FullscreenPlayerContainer />
     }
 
     handleMouseOver(e) {
         e.persist();
         
-    //   debugger
+   
             e.target.play();
             this.videoId = parseInt(e.target.id);
             this.props.history.push(`/videos/${e.target.id}`);
@@ -65,25 +46,13 @@ class VideoIndex extends React.Component {
             textDiv.className = 'vid-text';
             let listBtn = document.getElementById('list-btn');
             listBtn.className = 'list-btn';
-
-        //    return <List videoId={e.target.id}/>
-
-            // e.className='target-vid'
-
-          
-   
-        
     }
 
-    // handleClick(e) {
-    //     this.props.history.push(`/show/${e.target.id}`)
 
-    // }
 
     handleMouseOut(e){
        e.persist();
             e.target.pause()
-            // e.className='video-row-vid'
             e.target.currentTime = 0;
             e.target.load();
             let textDiv1 = document.getElementById(`vid-text-${e.target.id}`);

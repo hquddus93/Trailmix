@@ -4,7 +4,7 @@ class List extends React.Component {
     constructor(props){
         super(props);
      
-        let buttonText = this.props.currentUser.myListVideoIds.includes(this.props.videoId) ? <i class="fa fa-check-circle" ></i> : <i class="fa fa-plus-circle" aria-hidden="true"></i>;
+        let buttonText = this.props.currentUser.myListVideoIds.includes(this.props.videoId) ? <i className="fa fa-check-circle" ></i> : <i className="fa fa-plus-circle" aria-hidden="true"></i>;
         
         this.state = {buttonText: buttonText}
 
@@ -17,14 +17,14 @@ handleClick() {
     let {videoId} = this.props;
 
     if (this.props.currentUser.myListVideoIds.includes(videoId)) {
-        debugger
+        
      this.props.deleteFromList(videoId, this.props.currentUser)  
-        this.setState({ buttonText:<i class="fa fa-plus-circle" aria-hidden="true"></i>})
+        this.setState({ buttonText:<i className="fa fa-plus-circle" aria-hidden="true"></i>})
         
     } else {
-        debugger
+        
         this.props.addToList(this.props.videos[videoId], this.props.currentUser);
-        this.setState({ buttonText: <i class="fa fa-check-circle" ></i> })
+        this.setState({ buttonText: <i className="fa fa-check-circle" ></i> })
        
     };
     

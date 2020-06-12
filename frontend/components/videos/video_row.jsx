@@ -9,9 +9,9 @@ const VideoRow = props => {
             if (video.genres.includes(props.genre)) {
                 return (
                 
-                    <div className='single-vid' onMouseOver={props.handleMouseOver}
+                    <div key={video.id} className='single-vid' onMouseOver={props.handleMouseOver}
                         onMouseLeave={props.handleMouseOut}>
-                    <video key={video.id} id={video.id} autoplay={false} src={video.videoUrl} poster={video.photoUrl} height='150' width='250'  
+                    <video key={video.id} id={video.id} autoPlay={false} src={video.videoUrl} poster={video.photoUrl} height='150' width='250'  
                             onClick={props.handleClick} >{video.title} </video>
                         <div id={`vid-text-${video.id}`} className='vid-text-hidden' >
                             <h3>{video.title}</h3>

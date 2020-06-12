@@ -75,7 +75,7 @@ class SearchResults extends React.Component {
                     <h1>Search Results</h1>
                     <ul className='search-videos'>
                         {this.props.videos.map(video => (
-                            <video key={video.id} autoplay={true} poster={video.photoUrl} src={video.videoUrl} height='150' width='250'>
+                            <video key={video.id} autoPlay={true} poster={video.photoUrl} src={video.videoUrl} height='150' width='250'>
                                 
                             </video> 
                             ))}

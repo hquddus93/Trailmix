@@ -10,8 +10,6 @@ import SignupForm from './signup';
 const Splash = (props) => {
     return(
       <div className='splash'>
-        {/* <div class='div'>
-        </div> */}
         <div className='main'>
           <div className='darker-background'>
           <nav className='nav-bar'>

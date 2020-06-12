@@ -43,7 +43,7 @@ class myList extends React.Component {
     handleMouseOver(e) {
         e.persist();
 
-        //   debugger
+   
         e.target.play();
         this.videoId = parseInt(e.target.id)
         this.props.history.push(`/videos/${e.target.id}`)
@@ -59,15 +59,15 @@ class myList extends React.Component {
 
     componentDidMount() {
         this.props.fetchAllVideos();
-        debugger
+  
     }
 
     render() {
         if (Object.values(this.props.videos).length === 0) {
-            debugger
+           
             return <> </>
         } else {
-        debugger
+       
         return (
             <div className='mylist'>
                 <nav className='list-nav'>
@@ -114,9 +114,9 @@ class myList extends React.Component {
                     <h1>My List</h1>
                     <div className='my-list-vids'>
                         {currentUser.myListVideoIds.map(vidId => {
-                            debugger
+                          
                             let video = (this.props.videos[vidId]);
-                            debugger
+                          
                             return  <video key={vidId} id={vidId} autoPlay={false} src={video.videoUrl} poster={video.photoUrl} height='150' width='250'
                                 onMouseOver={event => event.target.play()}
                                 onMouseOut={this.handleMouseOut} 
