@@ -22,8 +22,6 @@ class TvShows extends React.Component {
         e.target.play();
         this.videoId = parseInt(e.target.id)
         this.props.history.push(`/videos/${e.target.id}`)
-
-
     }
 
     render() {
