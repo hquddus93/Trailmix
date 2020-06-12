@@ -52,15 +52,15 @@ class SignupForm extends React.Component {
     render() {
 
         return (
-            <div>
+            <div className='signup-form-container'>
+                
                 <form className='signup-form' onSubmit={this.handleSubmit}>
-                {/* {this.renderErrors()} */}
                     <input type="text"
                         placeholder='    Email address'
                         value={this.state.email}
                         onChange={this.update('email')} 
                         />
-                        <button> Try It Now </button>
+                        <button id='signup-btn-big'> Try It Now </button>
                 </form>
                     {this.err ? <p className='signup-error'>{this.err}</p> : null}
             </div>

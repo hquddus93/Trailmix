@@ -46,8 +46,7 @@ class SearchResults extends React.Component {
                         <Link to='my_list'>MyList</Link>
                     </ul>
 
-                    <SearchContainer
-                        />
+                    <SearchContainer />
                         {/* /> */}
 
                     <div className='dropdown'>

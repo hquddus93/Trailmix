@@ -13,17 +13,18 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 300px;
+    width: 350px;
     color: white;
     font-family: Helvetica;
 }
 
- .videos-page-links li {
+ .videos-page-links a {
     list-style: none;
     color: white;
     font-family: Helvetica;
-    font-size: 12px;
-    /* padding-right: 20px; */
+    font-size: 14px;
+    text-decoration: none;
+    margin-left: 30px;
  }
 
  .dropdown {

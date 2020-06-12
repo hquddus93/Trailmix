@@ -7,11 +7,15 @@ class TvShows extends React.Component {
         super(props);
 
         this.handleMouseOver = this.handleMouseOver.bind(this);
+        this.handleClick = this.handleClick.bind(this);
 
        
     }
 
-
+    handleClick(e) {
+        this.props.history.push(`/play/${e.target.id}`)
+        return <FullscreenPlayerContainer />
+    }
 
     handleMouseOver(e) {
         e.persist();
@@ -77,7 +81,8 @@ class TvShows extends React.Component {
                                     return (
                                         <div className='single-vid-container-movie'>
                                             <video key={video.id} id={video.id} autoplay={false} src={video.videoUrl} poster={video.photoUrl} height='150' width='250' onMouseOver={event => event.target.play()}
-                                                onMouseOut={event => event.target.pause()} ></video>
+                                                onMouseOut={event => event.target.pause()} 
+                                                onClick={this.handleClick}></video>
                                         </div>
                                     )
                                 }

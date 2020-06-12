@@ -3,6 +3,7 @@ import { Link, Redirect } from 'react-router-dom';
 import SearchContainer from './search_container';
 import VideoRowContainer from './video_row';
 import BackgroundVideo from './backgroundvideo';
+import FullscreenPlayerContainer from './fullscreen_player_container';
 
 
 
@@ -12,7 +13,9 @@ class VideoIndex extends React.Component {
 
 
         // this.update = this.update.bind(this);
+        this.handleClick = this.handleClick.bind(this);
         this.handleMouseOver = this.handleMouseOver.bind(this)
+        this.handleMouseOut = this.handleMouseOut.bind(this)
         // this.handleChange = this.handleChange.bind(this);
         this.state={
             inputValue: ''
@@ -41,13 +44,27 @@ class VideoIndex extends React.Component {
     
     // }
 
+    handleClick(e) {
+     
+        // this.props.history.pop(`/play/${e.target.id}`)
+        this.props.history.push(`/play/${e.target.id}`)
+     
+        debugger
+        
+        return <FullscreenPlayerContainer />
+    }
+
     handleMouseOver(e) {
         e.persist();
         
     //   debugger
             e.target.play();
-            this.videoId = parseInt(e.target.id)
-            this.props.history.push(`/videos/${e.target.id}`)
+            this.videoId = parseInt(e.target.id);
+            this.props.history.push(`/videos/${e.target.id}`);
+            let textDiv = document.getElementById(`vid-text-${e.target.id}`);
+            textDiv.className = 'vid-text';
+            let listBtn = document.getElementById('list-btn');
+            listBtn.className = 'list-btn';
 
         //    return <List videoId={e.target.id}/>
 
@@ -63,21 +80,28 @@ class VideoIndex extends React.Component {
 
     // }
 
-    handleMouseOut(){
-        return e => {
+    handleMouseOut(e){
+       e.persist();
             e.target.pause()
-            e.className='video-row-vid'
+            // e.className='video-row-vid'
+            e.target.currentTime = 0;
+            e.target.load();
+            let textDiv1 = document.getElementById(`vid-text-${e.target.id}`);
+            textDiv1.className='vid-text-hidden';
+            let listButton = document.getElementById('list-btn');
+            listButton.className = 'hidden-list-btn'
 
-        }
     }
 
     componentDidMount() {
         this.props.fetchAllVideos()
+        // let hideBtn = document.getElementById('hide-on-render');
+        // hideBtn.className = 'hideBtn';
     }
-
+    
     render() {
+        
 
-      
         if (this.props.videos === undefined) {
             return <> </>
         } 
@@ -135,7 +159,9 @@ class VideoIndex extends React.Component {
                                 <VideoRowContainer 
                                     videos={this.props.videos}
                                     genre={genre}
+                                    handleMouseOut={this.handleMouseOut}
                                     handleMouseOver={this.handleMouseOver}
+                                    handleClick={this.handleClick}
                                     videoId={this.videoId}
                                     />
                             </div>

@@ -8,6 +8,7 @@ class Movies extends React.Component{
 
         this.handleMouseOver = this.handleMouseOver.bind(this);
         this.handleChange = this.handleChange.bind(this);
+        this.handleClick = this.handleClick.bind(this);
         this.state = {inputValue: ""};
     }
 
@@ -36,9 +37,13 @@ class Movies extends React.Component{
         e.target.play();
         this.videoId = parseInt(e.target.id)
         this.props.history.push(`/videos/${e.target.id}`)
-
-
     }
+
+    handleClick(e) {
+        this.props.history.push(`/play/${e.target.id}`)
+        return <FullscreenPlayerContainer />
+    }
+
 
     render() {
         if (!this.props.videos) {
@@ -93,7 +98,8 @@ class Movies extends React.Component{
                                 return  (
                                 <div className='single-vid-container-movie'>
                                     <video key={video.id} id={video.id} autoplay={false} src={video.videoUrl} poster={video.photoUrl} height='150' width='250' onMouseOver={event => event.target.play()}
-                                        onMouseOut={event => event.target.pause()} ></video>
+                                        onMouseOut={event => event.target.pause()} 
+                                        onClick={this.handleClick}></video>
                                 </div>
                                 )}
                             })}

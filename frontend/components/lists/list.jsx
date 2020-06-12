@@ -19,7 +19,7 @@ handleClick() {
     if (this.props.currentUser.myListVideoIds.includes(videoId)) {
         debugger
      this.props.deleteFromList(videoId, this.props.currentUser)  
-        this.setState({ buttonText: <i class="fa fa-plus-circle" aria-hidden="true"></i>})
+        this.setState({ buttonText:<i class="fa fa-plus-circle" aria-hidden="true"></i>})
         
     } else {
         debugger
@@ -44,7 +44,7 @@ handleClick() {
                 // <button onClick={() => this.handleClick()}>test</button>
                 
                 /* {buttonText = this.props.list.listVideoIds.values.includes(this.props.match.params.videoId ? "-" : "+")} */
-            <button className='list-btn' onClick={() => this.handleClick()}> {this.state.buttonText} </button>
+                <button id='list-btn' onClick={() => this.handleClick()}> {this.state.buttonText} </button>
             
                 )
         }

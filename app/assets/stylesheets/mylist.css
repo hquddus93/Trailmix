@@ -24,8 +24,6 @@
     font-family: Helvetica;
     font-size: 12px;
     text-decoration: none;
-
-    /* padding-right: 20px; */
  }
 
  .dropdown {
@@ -35,13 +33,11 @@
  }
 
  .fa-caret-down {
-    /* background-color: #4CAF50; */
     color: white;
     padding: 16px;
     font-size: 16px;
     border: none;
     cursor: pointer;
-    /* margin-left: 400px; */
 }
 
  .dropdown-content {
@@ -89,9 +85,8 @@
 }
 .dropdown-content li Link:hover {
     text-decoration: none;
-  
-
 }
+
 .fa-caret-down:hover .dropdown-content {
     display: block;
     background-color: black;
@@ -101,11 +96,10 @@
 }
 
 
-
 .video-fab {
     color: white;
     font-size: 18px;
-    /* font-family: font; */
+  
 }
 
 .search-input   {
@@ -117,18 +111,20 @@
     background: rgb(14, 11, 11);
     height: 1000px;
     width: auto;
-
-
 }
 
 .my-list-vids {
-
+    width: 1100px;
     margin-top: 30px;
     margin-left: 40px;
     display: flex;
-    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    height: auto;
   
 }
+
+
 
 .my-list-container {
     display: flex;

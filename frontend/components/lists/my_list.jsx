@@ -1,14 +1,16 @@
 import React from 'react';
 import { Link, Redirect } from 'react-router-dom';
 import SearchContainer from '../videos/search_container';
-
+import FullscreenPlayerContainer from '../videos/fullscreen_player_container';
 
 class myList extends React.Component {
     constructor(props){
         super(props);
 
-        this.handleMouseOver = this.handleMouseOver.bind(this)
+        this.handleMouseOver = this.handleMouseOver.bind(this);
+        this.handleMouseOut = this.handleMouseOut.bind(this);
         this.handleChange = this.handleChange.bind(this);
+        this.handleClick = this.handleClick.bind(this);
         this.state = {
             inputValue: ''
         }
@@ -28,6 +30,16 @@ class myList extends React.Component {
 
     }
 
+
+    handleClick(e) {
+
+     
+        this.props.history.push(`/play/${e.target.id}`)
+        return <FullscreenPlayerContainer />
+    }
+
+    
+
     handleMouseOver(e) {
         e.persist();
 
@@ -36,14 +48,15 @@ class myList extends React.Component {
         this.videoId = parseInt(e.target.id)
         this.props.history.push(`/videos/${e.target.id}`)
 
-        //    return <List videoId={e.target.id}/>
-
-        // e.className='target-vid'
-
-
-
-
     }
+
+    handleMouseOut(e) {
+        e.persist();
+        e.target.pause();
+        e.target.currentTime = 0;
+        e.target.load();
+    }
+
     componentDidMount() {
         this.props.fetchAllVideos();
         debugger
@@ -104,7 +117,10 @@ class myList extends React.Component {
                             debugger
                             let video = (this.props.videos[vidId]);
                             debugger
-                            return  <video key={vidId} id={vidId} autoPlay={false} src={video.videoUrl} poster={video.photoUrl} height='150' width='250'></video>
+                            return  <video key={vidId} id={vidId} autoPlay={false} src={video.videoUrl} poster={video.photoUrl} height='150' width='250'
+                                onMouseOver={event => event.target.play()}
+                                onMouseOut={this.handleMouseOut} 
+                                onClick={this.handleClick}></video>
                         })}
                     </div>
                 </div>

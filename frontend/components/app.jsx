@@ -11,6 +11,7 @@ import MyListContainer from './lists/my_list_container';
 import Splash from './splash/splash';
 import MoviesContainer from './videos/movies_container';
 import TvShowsContainer from './videos/tv_shows_container';
+import FullScreenPlayerContainer from './videos/fullscreen_player_container';
 
 
 const App = () => (
@@ -21,6 +22,7 @@ const App = () => (
             <AuthRoute exact path='/signin' component={LoginContainer} />
             <SignRoute exact path='/signup' component={SignupContainer}/>
             <AuthRoute exact path='/create_account' component={CreateAccountContainer}/>
+            <ProtectedRoute path='/play/:id' component={FullScreenPlayerContainer} />
             <ProtectedRoute path='/tv_shows' component={TvShowsContainer} />
             <ProtectedRoute path='/movies' component={MoviesContainer} />
             <ProtectedRoute path='/my_list' component={MyListContainer} />
