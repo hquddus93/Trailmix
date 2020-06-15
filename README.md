@@ -18,7 +18,7 @@
 #### 6. Videos play on fullscreen when clicked
 #### 7. Frontend/Backend user authentication with demo login
 ***
-![Alt Text](https://giphy.com/gifs/SVBF2lXBmIamFFzOFs/giphy.gif)
+![Alt Text](https://media.giphy.com/media/SVBF2lXBmIamFFzOFs/giphy.gif)
 <!-- <video src='https://giphy.com/gifs/SVBF2lXBmIamFFzOFs/html5'></video> -->
 
 ```
