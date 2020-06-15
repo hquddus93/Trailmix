@@ -19,12 +19,10 @@
 #### 7. Frontend/Backend user authentication with demo login
 
 
-<video src='https://giphy.com/gifs/SVBF2lXBmIamFFzOFs/html5'></video>
+`<video src='https://giphy.com/gifs/SVBF2lXBmIamFFzOFs/html5'></video>`
 
- handleMouseOver(e) {
+`handleMouseOver(e) {
         e.persist();
-        
-   
             e.target.play();
             this.videoId = parseInt(e.target.id);
             this.props.history.push(`/videos/${e.target.id}`);
@@ -46,4 +44,4 @@
             let listButton = document.getElementById('list-btn');
             listButton.className = 'hidden-list-btn'
 
-    }
+    }`
