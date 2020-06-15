@@ -18,9 +18,10 @@
 #### 6. Videos play on fullscreen when clicked
 #### 7. Frontend/Backend user authentication with demo login
 ***
+![Alt Text](https://giphy.com/gifs/SVBF2lXBmIamFFzOFs/giphy.gif)
+<!-- <video src='https://giphy.com/gifs/SVBF2lXBmIamFFzOFs/html5'></video> -->
 
 ```
-<video src='https://giphy.com/gifs/SVBF2lXBmIamFFzOFs/html5'></video>
 
 handleMouseOver(e) {
         e.persist();
