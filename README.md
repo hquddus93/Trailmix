@@ -19,6 +19,7 @@
 #### 7. Frontend/Backend user authentication with demo login
 ***
 
+```
 <video src='https://giphy.com/gifs/SVBF2lXBmIamFFzOFs/html5'></video>
 
 handleMouseOver(e) {
@@ -45,3 +46,4 @@ handleMouseOver(e) {
             listButton.className = 'hidden-list-btn'
 
     }
+    ```
