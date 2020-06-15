@@ -18,3 +18,32 @@
 #### 6. Videos play on fullscreen when clicked
 #### 7. Frontend/Backend user authentication with demo login
 
+
+<video src='https://giphy.com/gifs/SVBF2lXBmIamFFzOFs/html5'></video>
+
+ handleMouseOver(e) {
+        e.persist();
+        
+   
+            e.target.play();
+            this.videoId = parseInt(e.target.id);
+            this.props.history.push(`/videos/${e.target.id}`);
+            let textDiv = document.getElementById(`vid-text-${e.target.id}`);
+            textDiv.className = 'vid-text';
+            let listBtn = document.getElementById('list-btn');
+            listBtn.className = 'list-btn';
+    }
+
+
+
+    handleMouseOut(e){
+       e.persist();
+            e.target.pause()
+            e.target.currentTime = 0;
+            e.target.load();
+            let textDiv1 = document.getElementById(`vid-text-${e.target.id}`);
+            textDiv1.className='vid-text-hidden';
+            let listButton = document.getElementById('list-btn');
+            listButton.className = 'hidden-list-btn'
+
+    }
