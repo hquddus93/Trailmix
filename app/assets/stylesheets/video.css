@@ -1,6 +1,6 @@
 .video {
     height: 2000px;
-    width: 1300px;
+    width: 100vw;
     overflow: hidden;
 
     background: rgb(14, 11, 11);
