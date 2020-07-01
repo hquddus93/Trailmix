@@ -137,23 +137,7 @@ class myList extends React.Component {
                         })}
                     </div>
                 </div>
-                <footer className='list-footer'>
-                    <ul className='buttons'>
-                        <li id='splash-questions'>Questions?</li>
-                        <li>
-                            <a href='https://github.com/hquddus93'>
-                                <i className="fab fa-github" id='splash-fab'></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href='https://www.linkedin.com/in/hira-quddus-94963413b/'>
-                                <i className="fab fa-linkedin" id='splash-fab'></i>
-                            </a>
-                        </li>
-                    </ul>
-
-
-                </footer>
+               
             </div>
         )}
     }

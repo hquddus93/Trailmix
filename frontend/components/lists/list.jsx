@@ -13,17 +13,11 @@ class List extends React.Component {
 
 
 handleClick() {
-    // e.preventDefault();
     let {videoId} = this.props;
-   
-
-    if (this.props.currentUser.myListVideoIds.includes(videoId)) {
-       
+    if (this.props.currentUser.myListVideoIds.includes(videoId)) {       
      this.props.deleteFromList(videoId, this.props.currentUser)  
-        this.setState({ buttonText:<i className="fa fa-plus-circle" aria-hidden="true"></i>})
-        
+        this.setState({ buttonText:<i className="fa fa-plus-circle" aria-hidden="true"></i>})  
     } else {
-       
         this.props.addToList(this.props.videos[videoId], this.props.currentUser);
         this.setState({ buttonText: <i className="fa fa-check-circle" ></i> })
        

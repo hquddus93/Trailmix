@@ -8,6 +8,9 @@
 
 
 <a href="trailmix-aa.herokuapp.com">TrailMix</a>
+<br />
+<br />
+<img src="./app/assets/images/trailmix.png">
 
 # Features
 #### 1. Frontend/Backend user authentication with demo login
@@ -20,6 +23,8 @@
 ***
 ![Alt Text](https://media.giphy.com/media/SVBF2lXBmIamFFzOFs/giphy.gif)
 <!-- <video src='https://giphy.com/gifs/SVBF2lXBmIamFFzOFs/html5'></video> -->
+
+Videos play when hovered over and display video information such as title/genre/rating using onMouseOver and onMouseOut event handlers. Using an onClick event handlers videos will play in a separate fullscreen window when clicked. 
 
 ```
 
@@ -47,4 +52,27 @@ handleMouseOver(e) {
             listButton.className = 'hidden-list-btn'
 
     }
-    ```
+
+```
+
+
+Users are able to add and remove videos from their list from the main videos page.
+
+![Alt Text](https://media.giphy.com/media/gjZewLrLG20suefVpV/giphy.gif)
+
+```
+
+handleClick() {
+    let {videoId} = this.props;
+    if (this.props.currentUser.myListVideoIds.includes(videoId)) {       
+     this.props.deleteFromList(videoId, this.props.currentUser)  
+        this.setState({ buttonText:<i className="fa fa-plus-circle" aria-hidden="true"></i>})  
+    } else {
+        this.props.addToList(this.props.videos[videoId], this.props.currentUser);
+        this.setState({ buttonText: <i className="fa fa-check-circle" ></i> })
+       
+    };
+    
+
+}
+```
