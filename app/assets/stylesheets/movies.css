@@ -6,7 +6,8 @@
       position: relative;
       z-index: 4;
       top: 0; 
-      width: 98%;
+      width: 100%;
+      background-color: black;
  }
 
  .videos-page-links {
@@ -116,26 +117,31 @@
 
 .movies {
     background: rgb(14, 11, 11);
-    height: auto;
-    width: auto;
-
-
+    height: 200vh;
+    width: 100vw;
 }
+
 
 .movie-vids-container {
-    display: flex;
-    flex-direction: column;
+    width: 98%; 
+    margin-left: 1%;
+
+}
+.vsc-controller {
+    display: none;
 }
 .movie-vids {
-    margin-top: 30px;
-    margin-left: 40px;
-    display: flex;
-    flex-wrap: wrap;
+    width: 98%;
+    margin-top: 20px;
     height: auto;
-    width: 1100px; 
-    justify-content: space-around;
-    
-  
+    padding-left: 1%;
+}
+
+.movie-vids video {
+    background-color: black;
+    margin-left: 2%;
+    margin-right: 2%;
+    margin-bottom: 3%;
 }
 
 
@@ -148,8 +154,11 @@
 }
 
 .single-vid-container-movie {
-    height: 200px;
-    width: 250px;
+    background-color: black;
+    margin-left: 2%;
+    margin-right: 2%;
+    margin-bottom: 3%;
+    width: fit-content;
 
 }
 

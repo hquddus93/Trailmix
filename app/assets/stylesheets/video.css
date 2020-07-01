@@ -2,14 +2,13 @@
     height: 2000px;
     width: 100vw;
     overflow: hidden;
-
     background: rgb(14, 11, 11);
     z-index: -1;
 }
 
 .video-rows {
     position: relative;
-    width: 1300px;
+    width: 100vw;
     display: flex;
     flex-direction: column;
     bottom: 100px;
@@ -22,7 +21,9 @@
 .vid-category {
     display: flex;
     justify-content: column;
+    height: fit-content;
 }
+
 .video-row {
     /* position: absolute; */
     /* display: inline-block; */
@@ -30,9 +31,14 @@
     flex-direction: row;
     justify-content: left;
     /* margin: auto; */
-    height: 215px;
-    width: 1300px;
+    /* height: 215px; */
+    height: 10%;
+    margin-bottom: 5%;
+    padding-bottom: none;
+    /* width: 1300px; */
+    width: 100vw;
     margin-top: 0;
+
     overflow-x: scroll; 
     overflow-y: hidden;
 }
@@ -49,14 +55,18 @@
     /* justify-content: center; */
     /* justify-self: center; */
     /* margin-left: 30px; */
-    height: 150px;
-    width: 250px;
+    /* height: 150px;
+    width: 250px; */
+    height: 1%;
+    width: 21%;
     position: relative;
     z-index: 1; 
     margin-right: 2px;
+    padding-bottom: 0;
+    margin-bottom: 0;
 }
 
-.single-vid video {
+.single-vid video:hover {
     object-fit: fill;
 }
 
@@ -68,23 +78,24 @@
 
 
 .single-vid:hover{
-    transform: scale(1.25);
-    /* height: 300px;
-    width: 450px; */
-    position: relative;
+    /* position: fixed; */
     /* top: 15px; */
     /* top: 40px; */
-    margin: 0 40px ;
+    margin: 10px 60px 10px 60px;
+
+    transform: scale(1.5, 1.5);
+
     /* bottom: 20px; */
     z-index: 4;
     object-fit: cover;
 }
 
-.single-vid-container:hover {
-    height: 0;
-    width: 350px;
+/* .single-vid-container:hover {
+    /* height: 70%;
+    width: 70%; */
+
     /* position: relative; */
-}
+
 
 
 .vid-text-hidden {
@@ -93,6 +104,8 @@
 
 .hidden-list-btn {
     display: none;
+    outline: none;
+
 }
 
 .vid-text {
@@ -143,15 +156,22 @@
     background-color: transparent;
     border: none;
     color: white;
+    outline: none;
+}
+#list-btn {
+    outline: none;
 }
 
-/* .video ul li {
-    margin-top: 30px;
-} */
+.fa-check-circle {
+    outline: none;
+}
+.fa-plus-circle {
+    outline: none;
+}
 
 .background-vid {
     z-index: 1;
-    width: 100%;
+    width: 100vw;
     height: 34%;
     position: relative;
     display: flex;
@@ -161,8 +181,8 @@
     top: 0;
 }
 
-.background-vid video {
-    object-fit: cover;
+#mainvid {
+    object-fit: fill;
 
 }
 
@@ -188,6 +208,7 @@
     border: none;
     right: 140px;
     top: 450px;
+    outline: none;
 
 }
 
@@ -195,6 +216,3 @@
     border: none;
 }
 
-.fa-volume-on {
-    border: none;
-}

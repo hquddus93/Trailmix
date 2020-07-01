@@ -1,5 +1,6 @@
 import React from 'react';
-import { render } from 'react-dom';
+import { Redirect } from 'react-router-dom';
+import SearchResults from './search_results';
 
 class Search extends React.Component {
     constructor(props){
@@ -26,23 +27,16 @@ class Search extends React.Component {
         e.preventDefault();
         this.setState({ videos: this.props.searchVideos(this.state.inputValue) });
         
-        this.props.searchVideos(this.state.inputValue)
+        this.props.searchVideos(this.state.inputValue);
 
-        
-        // <Redirect to='/search_results' videos={this.props.searchVideos(this.state.inputValue)} />
-     
         this.props.history.push('/search_results')
+      
       
 
     }
-
-
-
-
-
     
     render() {
-    
+    debugger
         return(
             <form onSubmit={this.handleChange} id="content">
            

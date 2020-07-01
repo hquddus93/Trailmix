@@ -6,7 +6,8 @@
 }
 
 .fullscreen-container video {
-
+    height: 100%;
+    width: 100%;
     object-fit: cover;
     position: absolute;
 }
@@ -20,12 +21,16 @@
     /* z-index: 3; */
     color: white;
     font-size: 72px;
+    outline: none;
 }
 
 .hidden-back-btn {
     display: none;
+    outline: none;
 }
 
 .hidden-list-btn {
     display: none;
+    outline: none;
+
 }

@@ -6,13 +6,16 @@ export const fetchAllVideos = () => (
 );
 
 
-export const fetchVideo = (video) => (
-    $.ajax({
-        method: 'GET',
-        url: `api/videos/${video.id}`,
-        // data: { video }
-    })
-);
+export const fetchVideo = (videoId) => {
+    debugger
+    return (
+        $.ajax({
+            method: 'GET',
+            url: `api/videos/${videoId}`,
+            // data: { video }
+        })
+    )
+};
 
 
 export const searchVideos = (keyword) => (

@@ -75,11 +75,11 @@ class TvShows extends React.Component {
                             {this.props.videos.map(video => {
                                 if (video.show) {
                                     return (
-                                        <div className='single-vid-container-movie'>
-                                            <video key={video.id} id={video.id} autoPlay={false} src={video.videoUrl} poster={video.photoUrl} height='150' width='250' onMouseOver={event => event.target.play()}
-                                                onMouseOut={event => event.target.pause()} 
-                                                onClick={this.handleClick}></video>
-                                        </div>
+                                        
+                                        <video key={video.id} id={video.id} autoPlay={false} src={video.videoUrl} poster={video.photoUrl} height='150' width='250' onMouseOver={event => event.target.play()}
+                                            onMouseOut={event => event.target.pause()} 
+                                            onClick={this.handleClick}></video>
+                                       
                                     )
                                 }
                             })}

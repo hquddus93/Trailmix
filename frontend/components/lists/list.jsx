@@ -15,14 +15,15 @@ class List extends React.Component {
 handleClick() {
     // e.preventDefault();
     let {videoId} = this.props;
+    debugger
 
     if (this.props.currentUser.myListVideoIds.includes(videoId)) {
-        
+        debugger
      this.props.deleteFromList(videoId, this.props.currentUser)  
         this.setState({ buttonText:<i className="fa fa-plus-circle" aria-hidden="true"></i>})
         
     } else {
-        
+        debugger
         this.props.addToList(this.props.videos[videoId], this.props.currentUser);
         this.setState({ buttonText: <i className="fa fa-check-circle" ></i> })
        
@@ -34,7 +35,7 @@ handleClick() {
     render() {
         
         // this.buttonText = this.props.currentUser[currentUser.id].myListVideoIds.includes(this.props.videoId) ? "x" : "+";
-
+        debugger
         
         if (!this.props.currentUser) {
             return <></>

@@ -12,8 +12,10 @@ class myList extends React.Component {
         this.handleChange = this.handleChange.bind(this);
         this.handleClick = this.handleClick.bind(this);
         this.state = {
-            inputValue: ''
+            inputValue: '',
+            
         }
+        this.loaded = false;
     }
 
     update(field) {
@@ -58,16 +60,18 @@ class myList extends React.Component {
     }
 
     componentDidMount() {
+        debugger
         this.props.fetchAllVideos();
+        this.loaded = true;
+        debugger
   
     }
 
     render() {
-        if (Object.values(this.props.videos).length === 0) {
-           
+        debugger;
+        if (!this.loaded) {
             return <> </>
         } else {
-       
         return (
             <div className='mylist'>
                 <nav className='list-nav'>
@@ -113,20 +117,24 @@ class myList extends React.Component {
                 <div className='my-list-container'>
                     <h1>My List</h1>
                     <div className='my-list-vids'>
-                        {currentUser.myListVideoIds.map(vidId => {
+                        {this.props.currentUser.myListVideoIds.map(vidId => {
                           
                             let video = (this.props.videos[vidId]);
                           
-                            return  <video key={vidId} id={vidId} autoPlay={false} src={video.videoUrl} poster={video.photoUrl} height='150' width='250'
+                            return (
+                            <video key={vidId} id={vidId} autoPlay={false} src={video.videoUrl} poster={video.photoUrl} height='150' width='250'
                                 onMouseOver={event => event.target.play()}
                                 onMouseOut={this.handleMouseOut} 
-                                onClick={this.handleClick}></video>
+                                onClick={this.handleClick}>
+                            </video>
+                                )
                         })}
                     </div>
                 </div>
         </div>
         )}
     }
+    
 };
 
 export default myList;

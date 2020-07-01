@@ -1,6 +1,7 @@
 import { RECEIVE_CURRENT_USER } from '../actions/session';
 // import { DELETE_FROM_LIST} from '../actions/session';
-import {ADD_TO_LIST, DELETE_FROM_LIST} from '../actions/list'
+import {ADD_TO_LIST, DELETE_FROM_LIST} from '../actions/list';
+import {RECEIVE_VIDEOS} from '../actions/video';
 
 const usersReducer = (state = {}, action) => {
     
@@ -23,7 +24,9 @@ const usersReducer = (state = {}, action) => {
            
             let currentUser = action.currentUser;
             currentUser.myListVideoIds.push(action.video.video_id);
-            return Object.assign({}, state, {[currentUser.id]: currentUser})
+            return Object.assign({}, state, {[currentUser.id]: currentUser});
+
+       
 
 
         // case DELETE_FROM_LIST

@@ -96,11 +96,11 @@ class Movies extends React.Component{
                             {this.props.videos.map(video => {
                                 if (!video.season_id) {
                                 return  (
-                                <div className='single-vid-container-movie'>
-                                    <video key={video.id} id={video.id} autoPlay={false} src={video.videoUrl} poster={video.photoUrl} height='150' width='250' onMouseOver={event => event.target.play()}
+                                
+                                    <video key={video.id} id={video.id} autoPlay={false} src={video.videoUrl} poster={video.photoUrl} draggable="false" height='150' width='250' onMouseOver={event => event.target.play()}
                                         onMouseOut={event => event.target.pause()} 
                                         onClick={this.handleClick}></video>
-                                </div>
+                             
                                 )}
                             })}
                         </div>

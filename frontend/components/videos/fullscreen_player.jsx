@@ -4,6 +4,7 @@ import React from 'react';
 class FullscreenPlayer extends React.Component {
     constructor(props) {
         super(props);
+        
     }
 
     componentDidMount() {
@@ -23,6 +24,13 @@ class FullscreenPlayer extends React.Component {
         backButton.className = 'hidden-back-btn';
     }
 
+    handleClick() {
+        debugger
+        // this.props.history.pop();
+        this.props.fetchAllVideos();
+        this.props.history.goBack();
+    }
+
     render() {
       
         const {video} = this.props;
@@ -30,7 +38,7 @@ class FullscreenPlayer extends React.Component {
             return (
                 <div className='fullscreen-container'>
                     <video src={video.videoUrl} poster={video.photoUrl} autoPlay fullscreen='true' controls={true} id={video.id} onMouseMove={() => this.handleMousenter()} onMouseLeave={() => this.handleMouseLeave()}></video>
-                    <button id='back-btn' onClick={() => this.props.history.goBack()} onMouseMove={() => this.handleMousenter()} onMouseLeave={() => this.handleMouseLeave()}><i className="fas fa-arrow-left"></i></button>
+                    <button id='back-btn' onClick={() => this.handleClick()} onMouseMove={() => this.handleMousenter()} onMouseLeave={() => this.handleMouseLeave()}><i className="fas fa-arrow-left"></i></button>
                 </div>
             )
 

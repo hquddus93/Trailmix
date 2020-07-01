@@ -7,9 +7,12 @@ import SearchResults from './search_results';
 
 
 
-const mSTP = (state) => ({
-    videos: Object.values(state.entities.videos)
-});
+const mSTP = (state) => {
+    debugger
+    return {
+        videos: Object.values(state.entities.videos)
+}
+};
 
 const mDTP = dispatch => ({
     logout: () => dispatch(logout()),

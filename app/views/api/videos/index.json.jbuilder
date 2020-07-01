@@ -1,5 +1,4 @@
 
-
 @videos.each do |video|
  
     json.set! video.id do
@@ -9,6 +8,8 @@
         json.genres video.genres.pluck(:genre)
     end
 end
+
+# json.keyword @keyword if @keyword
 
 # json.extract! "hello" 
 
