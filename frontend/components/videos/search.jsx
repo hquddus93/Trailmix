@@ -6,17 +6,14 @@ class Search extends React.Component {
     constructor(props){
         super(props);
 
-      
         this.update = this.update.bind(this)
         this.handleChange = this.handleChange.bind(this);
         this.state = {
             inputValue: "", videos: ""
-            // videos: this.props.videos
         }
     }
 
     update(field) {
-
         return e => (
             this.setState({ [field]: e.target.value })
         )
@@ -36,7 +33,7 @@ class Search extends React.Component {
     }
     
     render() {
-    debugger
+    
         return(
             <form onSubmit={this.handleChange} id="content">
            
@@ -52,7 +49,7 @@ class Search extends React.Component {
             </form>
             )
         }
-    // }
+
 };
 
 export default Search;

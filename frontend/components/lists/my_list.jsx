@@ -64,15 +64,13 @@ class myList extends React.Component {
     }
 
     componentDidMount() {
-        debugger
         this.props.fetchAllVideos();
         this.loaded = true;
-        debugger
   
     }
 
     render() {
-        debugger;
+        
         if (!this.loaded) {
             return (<div className='loading'>
                 <i className="fa fa-spinner fa-spin fa-3x fa-fw"></i>

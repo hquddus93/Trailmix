@@ -31,11 +31,8 @@ class SearchResults extends React.Component {
     }
 
     handleClick(e) {
-        debugger
         e.preventDefault();
-        debugger
         this.props.history.push(`/play/${e.target.id}`);
-        debugger
         return <FullscreenPlayerContainer />
 
     }
