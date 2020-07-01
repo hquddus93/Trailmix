@@ -7,7 +7,6 @@ export const fetchAllVideos = () => (
 
 
 export const fetchVideo = (videoId) => {
-    debugger
     return (
         $.ajax({
             method: 'GET',

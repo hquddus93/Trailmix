@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import SearchContainer from './search_container';
+import FullscreenPlayerContainer from './fullscreen_player_container';
+
 
 class TvShows extends React.Component {
     constructor(props) {
@@ -8,8 +10,17 @@ class TvShows extends React.Component {
 
         this.handleMouseOver = this.handleMouseOver.bind(this);
         this.handleClick = this.handleClick.bind(this);
+        this.handleMouseOut = this.handleMouseOut.bind(this);
 
        
+    }
+
+    handleMouseOut(e) {
+        // e.persist();
+        e.target.pause()
+        e.target.currentTime = 0;
+        e.target.load();
+     
     }
 
     handleClick(e) {
@@ -31,11 +42,10 @@ class TvShows extends React.Component {
             return (
                 <div className='movies'>
                     <nav className='list-nav'>
-                        <a href="/#/">
-                            <img src="https://fontmeme.com/permalink/200602/b89239ba0483c23a0be252ebcabbe556.png"
-                                alt="netflix-font"
-                                border="0"
-                                id='logo' /></a>
+                        <img src="https://fontmeme.com/permalink/200602/b89239ba0483c23a0be252ebcabbe556.png"
+                            alt="netflix-font"
+                            border="0"
+                            id='logo' />
 
                         <ul className='videos-page-links'>
                             <Link to='/videos'>Home</Link>
@@ -77,7 +87,7 @@ class TvShows extends React.Component {
                                     return (
                                         
                                         <video key={video.id} id={video.id} autoPlay={false} src={video.videoUrl} poster={video.photoUrl} height='150' width='250' onMouseOver={event => event.target.play()}
-                                            onMouseOut={event => event.target.pause()} 
+                                            onMouseLeave={this.handleMouseOut} 
                                             onClick={this.handleClick}></video>
                                        
                                     )

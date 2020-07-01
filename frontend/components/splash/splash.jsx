@@ -13,13 +13,13 @@ const Splash = (props) => {
         <div className='main'>
           <div className='darker-background'>
           <nav className='nav-bar'>
-            <a href="https://trailmix-aa.heroku-app.com.com/#/" className='logo'>
+            
               <img src="https://fontmeme.com/permalink/200604/3150eaf395337ebc34eca4aae8e3c0bf.png" 
               alt="netflix-font" 
               border="0"
                 width='125'
                 height='50'
-                id='logo'/></a>
+                id='logo'/>
 
               <ul className='buttons'>
               <li>

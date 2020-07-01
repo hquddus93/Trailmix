@@ -1,14 +1,32 @@
  .videos-nav {
       display: flex;
       flex-direction: row;
+      justify-content: space-between;
       align-items: center;
-      width: auto;
       position: fixed;
       z-index: 4;
       top: 0; 
-      width: 98%;
+      width: 100vw;
+      background-color: black;
  }
 
+ .first-part {
+     display: flex;
+     flex-direction: row;
+     width: 50%;
+     justify-content: space-between;
+ }
+
+ .second-part {
+     display: flex;
+     flex-direction: row;
+     align-items: center;
+     margin-right: 2%;
+     /* width: 10%; */
+     /* margin-right: 30vw; */
+     
+
+ }
  .videos-page-links {
     display: flex;
     justify-content: space-between;
@@ -107,7 +125,3 @@
     /* font-family: font; */
 }
 
-.search-input   {
-    margin-left: 500px;
-    margin-right: 0;
-}

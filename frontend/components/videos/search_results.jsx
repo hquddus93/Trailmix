@@ -3,14 +3,42 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import SearchContainer from './search_container';
+import FullscreenPlayerContainer from './fullscreen_player_container';
 // import VideoContainer from './video_container'
 
 
 class SearchResults extends React.Component {
     constructor(props) {
         super(props);
+
+        this.handleMouseOut = this.handleMouseOut.bind(this);
+        this.handleClick = this.handleClick.bind(this);
     }
 
+    handleMouseOut(e) {
+        // e.persist();
+        e.target.pause()
+        e.target.currentTime = 0;
+        e.target.load();
+
+    }
+
+    handleMouseOver(e) {
+        e.persist();
+        e.target.play();
+        this.videoId = parseInt(e.target.id)
+        this.props.history.push(`/videos/${e.target.id}`)
+    }
+
+    handleClick(e) {
+        debugger
+        e.preventDefault();
+        debugger
+        this.props.history.push(`/play/${e.target.id}`);
+        debugger
+        return <FullscreenPlayerContainer />
+
+    }
 
 
     render() {
@@ -18,11 +46,11 @@ class SearchResults extends React.Component {
        return (
             <div className='search-results-page'>
                 <nav className='search-nav'>
-                    <a href="/#/">
-                        <img src="https://fontmeme.com/permalink/200602/b89239ba0483c23a0be252ebcabbe556.png"
-                            alt="netflix-font"
-                            border="0"
-                            id='logo' /></a>
+                   
+                    <img src="https://fontmeme.com/permalink/200602/b89239ba0483c23a0be252ebcabbe556.png"
+                        alt="netflix-font"
+                        border="0"
+                        id='logo' />
 
                     <ul className='videos-page-links'>
                         <Link to='/videos'>Home</Link>
@@ -60,9 +88,10 @@ class SearchResults extends React.Component {
                     <h1>Search Results</h1>
                     <ul className='search-videos'>
                         {this.props.videos.map(video => (
-                            <video key={video.id} poster={video.photoUrl} src={video.videoUrl} height='150' width='250'>
-                                
-                            </video> 
+                            <video key={video.id} id={video.id} poster={video.photoUrl} src={video.videoUrl} height='150' width='250'
+                                onMouseOver={event => event.target.play()}
+                                onMouseLeave={this.handleMouseOut}
+                                onClick={this.handleClick}></video> 
                             ))}
                     </ul>
 

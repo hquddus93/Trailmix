@@ -27,12 +27,13 @@ class FullscreenPlayer extends React.Component {
     handleClick() {
         debugger
         // this.props.history.pop();
-        this.props.fetchAllVideos();
         this.props.history.goBack();
+        this.props.fetchAllVideos();
+        debugger
     }
 
     render() {
-      
+      debugger
         const {video} = this.props;
         if (video !== undefined)  {
             return (

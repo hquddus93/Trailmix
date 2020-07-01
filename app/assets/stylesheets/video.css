@@ -8,7 +8,7 @@
 
 .video-rows {
     position: relative;
-    width: 100vw;
+    width: 100%;
     display: flex;
     flex-direction: column;
     bottom: 100px;
@@ -25,22 +25,27 @@
 }
 
 .video-row {
-    /* position: absolute; */
-    /* display: inline-block; */
+
     display: flex;
     flex-direction: row;
     justify-content: left;
-    /* margin: auto; */
-    /* height: 215px; */
     height: 10%;
     margin-bottom: 5%;
     padding-bottom: none;
-    /* width: 1300px; */
     width: 100vw;
     margin-top: 0;
-
     overflow-x: scroll; 
     overflow-y: hidden;
+}
+
+.video-row::-webkit-scrollbar {
+  display: block;
+  width: 0;
+}
+
+#mainvid {
+    object-fit: cover;
+    width: 100vw;
 }
 
 .main-vid-text p {
@@ -50,13 +55,7 @@
 
 
 .single-vid {
-    /* object-fit: cover; */
-    /* display: inline-block; */
-    /* justify-content: center; */
-    /* justify-self: center; */
-    /* margin-left: 30px; */
-    /* height: 150px;
-    width: 250px; */
+
     height: 1%;
     width: 21%;
     position: relative;
@@ -181,10 +180,7 @@
     top: 0;
 }
 
-#mainvid {
-    object-fit: fill;
 
-}
 
 .main-vid-text {
     font-size: 14px;

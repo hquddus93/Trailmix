@@ -37,8 +37,6 @@ class VideoIndex extends React.Component {
 
     handleMouseOver(e) {
         e.persist();
-        
-   
             e.target.play();
             this.videoId = parseInt(e.target.id);
             this.props.history.push(`/videos/${e.target.id}`);
@@ -80,11 +78,11 @@ class VideoIndex extends React.Component {
         return (
             <div className='video'>
                 <nav className='videos-nav'>
-                    <a href="/#/">
-                        <img src="https://fontmeme.com/permalink/200602/b89239ba0483c23a0be252ebcabbe556.png"
-                            alt="netflix-font"
-                            border="0"
-                            id='logo' /></a>
+                <div className='first-part'>
+                    <img src="https://fontmeme.com/permalink/200602/b89239ba0483c23a0be252ebcabbe556.png"
+                        alt="netflix-font"
+                        border="0"
+                        id='logo' />
 
                     <ul className='videos-page-links'>
                         <Link to='/videos'>Home</Link>
@@ -92,7 +90,9 @@ class VideoIndex extends React.Component {
                         <Link to='/movies'>Movies</Link>
                         <Link to='/my_list'>MyList</Link>
                     </ul>
+                </div>
 
+                <div className='second-part'>
                     <SearchContainer />
 
                     <div className='dropdown'>
@@ -117,6 +117,7 @@ class VideoIndex extends React.Component {
                         </ul>
                         </i> 
                     </div>
+                </div>
                 </nav>
 
                 <BackgroundVideo />
@@ -126,6 +127,7 @@ class VideoIndex extends React.Component {
                             <h1>{genre}</h1>
                             <div className='video-row'>
                                 <VideoRowContainer 
+                                    // key={["Action", "Comedy", "Family", "Thriller", "Drama"].indexOf(genre)}
                                     videos={this.props.videos}
                                     genre={genre}
                                     handleMouseOut={this.handleMouseOut}

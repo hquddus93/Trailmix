@@ -89,13 +89,13 @@ handlePasswordError() {
         return (
             <div className='create-account'>
                 <nav className='create-account-nav-bar'>
-                    <a href="https://trailmix-aa.heroku-app.com.com/#/">
+                    
                     <img src="https://fontmeme.com/permalink/200604/3150eaf395337ebc34eca4aae8e3c0bf.png"
                         alt="netflix-font"
                         border="0"
                         width='125'
                         height='50'
-                        id='logo' /></a>
+                        id='logo' />
                 <div className='ca-buttons'>
                     <DemoContainer />
                     <Link to='/signin' className='signin-link'>Sign In</Link>

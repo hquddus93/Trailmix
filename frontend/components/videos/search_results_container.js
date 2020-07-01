@@ -8,7 +8,6 @@ import SearchResults from './search_results';
 
 
 const mSTP = (state) => {
-    debugger
     return {
         videos: Object.values(state.entities.videos)
 }

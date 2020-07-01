@@ -84,13 +84,13 @@ handleSubmit(e) {
 
             <div className='login-background'>
                 <nav className='login-nav'>
-                    <a href="https://trailmix-aa.heroku-app.com.com/#/">
+                    
                     <img src="https://fontmeme.com/permalink/200602/b89239ba0483c23a0be252ebcabbe556.png"
                         alt="netflix-font"
                         border="0"
                         id='logo' 
                     />
-                </a>
+               
          
                  <DemoContainer />
            

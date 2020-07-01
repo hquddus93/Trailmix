@@ -2,6 +2,10 @@ import React from 'react';
 import { Link, Redirect } from 'react-router-dom';
 import SearchContainer from '../videos/search_container';
 import FullscreenPlayerContainer from '../videos/fullscreen_player_container';
+import List from '../lists/list_container';
+import VideoRowContainer from '../videos/video_row_container';
+import VideoRow from '../videos/video_row';
+
 
 class myList extends React.Component {
     constructor(props){
@@ -70,16 +74,19 @@ class myList extends React.Component {
     render() {
         debugger;
         if (!this.loaded) {
-            return <> </>
+            return (<div className='loading'>
+                <i className="fa fa-spinner fa-spin fa-3x fa-fw"></i>
+                <span className="sr-only">Loading...</span>
+            </div>)
         } else {
         return (
             <div className='mylist'>
                 <nav className='list-nav'>
-                    <a href="/#/">
-                        <img src="https://fontmeme.com/permalink/200602/b89239ba0483c23a0be252ebcabbe556.png"
-                            alt="netflix-font"
-                            border="0"
-                            id='logo' /></a>
+                   
+                    <img src="https://fontmeme.com/permalink/200602/b89239ba0483c23a0be252ebcabbe556.png"
+                        alt="netflix-font"
+                        border="0"
+                        id='logo' />
 
                     <ul className='videos-page-links'>
                         <Link to='/videos'>Home</Link>
@@ -126,12 +133,30 @@ class myList extends React.Component {
                                 onMouseOver={event => event.target.play()}
                                 onMouseOut={this.handleMouseOut} 
                                 onClick={this.handleClick}>
+
                             </video>
                                 )
                         })}
                     </div>
                 </div>
-        </div>
+                <footer className='list-footer'>
+                    <ul className='buttons'>
+                        <li id='splash-questions'>Questions?</li>
+                        <li>
+                            <a href='https://github.com/hquddus93'>
+                                <i className="fab fa-github" id='splash-fab'></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href='https://www.linkedin.com/in/hira-quddus-94963413b/'>
+                                <i className="fab fa-linkedin" id='splash-fab'></i>
+                            </a>
+                        </li>
+                    </ul>
+
+
+                </footer>
+            </div>
         )}
     }
     
