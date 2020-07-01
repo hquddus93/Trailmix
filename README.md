@@ -56,7 +56,7 @@ handleMouseOver(e) {
 ```
 
 
-Users are able to add and remove videos from their list from the main videos page.
+Users are able to add and remove videos from their list from the main videos page. 
 
 ![Alt Text](https://media.giphy.com/media/gjZewLrLG20suefVpV/giphy.gif)
 
