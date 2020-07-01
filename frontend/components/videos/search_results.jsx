@@ -43,7 +43,7 @@ class SearchResults extends React.Component {
        return (
             <div className='search-results-page'>
                 <nav className='search-nav'>
-                   
+                   <div className="first-part">
                     <img src="https://fontmeme.com/permalink/200602/b89239ba0483c23a0be252ebcabbe556.png"
                         alt="netflix-font"
                         border="0"
@@ -55,6 +55,8 @@ class SearchResults extends React.Component {
                         <Link to='/movies'>Movies</Link>
                         <Link to='my_list'>MyList</Link>
                     </ul>
+                   </div>
+                   <div className="second-part">
 
                     <SearchContainer />
                         {/* /> */}
@@ -80,6 +82,7 @@ class SearchResults extends React.Component {
                             </ul>
                         </i>
                     </div>
+                   </div>
                 </nav>
                 <div className='search-result-videos'>
                     <h1>Search Results</h1>

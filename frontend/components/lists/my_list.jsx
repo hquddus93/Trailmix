@@ -80,7 +80,7 @@ class myList extends React.Component {
         return (
             <div className='mylist'>
                 <nav className='list-nav'>
-                   
+                   <div className="first-part">
                     <img src="https://fontmeme.com/permalink/200602/b89239ba0483c23a0be252ebcabbe556.png"
                         alt="netflix-font"
                         border="0"
@@ -92,7 +92,8 @@ class myList extends React.Component {
                         <Link to='/movies'>Movies</Link>
                         <Link to='/my_list'>MyList</Link>
                     </ul>
-
+                    </div>
+                    <div className="second-part">
                     <SearchContainer inputValue={this.state.inputValue} />
 
                     <div className='dropdown'>
@@ -116,6 +117,7 @@ class myList extends React.Component {
                                 </li>
                             </ul>
                         </i>
+                    </div>
                     </div>
                 </nav>
 

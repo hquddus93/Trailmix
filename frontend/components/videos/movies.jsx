@@ -63,19 +63,21 @@ class Movies extends React.Component{
             return (
                 <div className='movies'>
                     <nav className='list-nav'>
-                      
-                        <img src="https://fontmeme.com/permalink/200602/b89239ba0483c23a0be252ebcabbe556.png"
-                            alt="netflix-font"
-                            border="0"
-                            id='logo' />
+                       <div className='first-part'>
+                            <img src="https://fontmeme.com/permalink/200602/b89239ba0483c23a0be252ebcabbe556.png"
+                                alt="netflix-font"
+                                border="0"
+                                id='logo' />
 
-                        <ul className='videos-page-links'>
-                            <Link to='/videos'>Home</Link>
-                            <Link to='/tv_shows'>TV Shows</Link>
-                            <Link to='/movies'>Movies</Link>
-                            <Link to='/my_list'>MyList</Link>
-                        </ul>
+                            <ul className='videos-page-links'>
+                                <Link to='/videos'>Home</Link>
+                                <Link to='/tv_shows'>TV Shows</Link>
+                                <Link to='/movies'>Movies</Link>
+                                <Link to='/my_list'>MyList</Link>
+                            </ul>
+                        </div>
 
+                    <div className='second-part'>
                         <SearchContainer inputValue={this.state.inputValue} />
 
                         <div className='dropdown'>
@@ -100,6 +102,7 @@ class Movies extends React.Component{
                                 </ul>
                             </i>
                         </div>
+                    </div>
                     </nav>
                     <div className='movie-vids-container'>
                         <h1>Movies</h1>

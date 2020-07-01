@@ -1,6 +1,7 @@
  .search-nav {
       display: flex;
       flex-direction: row;
+      justify-content: space-between;
       align-items: center;
       width: auto;
       position: fixed;
@@ -119,7 +120,7 @@
     /* font-family: font; */
 }
 
-.search-input   {
+/* .search-input   {
     margin-left: 500px;
     margin-right: 0;
-}
+} */

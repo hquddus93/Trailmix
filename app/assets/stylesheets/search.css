@@ -149,8 +149,8 @@ input {
   /* position: absolute; */
   padding-top: 200px;
   background: rgb(14, 11, 11);
-  width: auto;
-  height: 2000px;
+  width: 100vw;
+  height: 100%;
 
   /* background-color: rgb(14, 11, 11); */
   
@@ -168,11 +168,12 @@ input {
 .search-videos {
   display: inline-block;
   /* width: auto; */
-  width: 1200px;
-  height: 1000px;
+  width: 100vw;
+  height: 1000%;
   /* flex-direction: column; */
   justify-content: space-between;
   background: rgb(14, 11, 11);
+  padding-bottom: 60%;
 
   
 }

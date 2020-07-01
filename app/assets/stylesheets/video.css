@@ -28,7 +28,7 @@
 
     display: flex;
     flex-direction: row;
-    justify-content: left;
+    /* justify-content: left; */
     height: 10%;
     margin-bottom: 5%;
     padding-bottom: none;
@@ -55,7 +55,7 @@
 
 
 .single-vid {
-
+    background-color: black;
     height: 1%;
     width: 21%;
     position: relative;
@@ -63,6 +63,7 @@
     margin-right: 2px;
     padding-bottom: 0;
     margin-bottom: 0;
+    object-fit: fill;
 }
 
 .single-vid video:hover {
@@ -88,12 +89,6 @@
     z-index: 4;
     object-fit: cover;
 }
-
-/* .single-vid-container:hover {
-    /* height: 70%;
-    width: 70%; */
-
-    /* position: relative; */
 
 
 
